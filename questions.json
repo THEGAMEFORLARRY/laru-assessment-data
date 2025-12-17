@@ -1,0 +1,175 @@
+{
+  "scenario": {
+    "patientName": "Margaret Wilson",
+    "patientAge": 78,
+    "patientGender": "Female",
+    "patientAvatar": "https://i.imgur.com/ccTT0vA.png",
+    "patientEmoji": "👵",
+    "dispatchInfo": {
+      "incidentType": "Welfare Check",
+      "caller": "Patient's daughter",
+      "mdtInformation": [
+        "Daughter concerned about mother's declining mobility",
+        "Daughter states patient had fall 2 or 3 days ago",
+        "Patient currently at home alone, unable to be contacted",
+        "No immediate medical emergency identified"
+      ]
+    },
+    "arrivalScene": {
+      "address": "24 Willow Street",
+      "description": "A typical suburban single-family home in a quiet residential area",
+      "exterior": [
+        "Two-storey weatherboard home with tiled roof",
+        "Front lawn showing some overgrowth",
+        "Otherwise appears relatively well-maintained",
+        "Pathway to front door is clear and accessible",
+        "Lights visible inside, suggesting occupant is home"
+      ],
+      "impressions": "The property suggests someone living independently but potentially experiencing recent challenges with outdoor maintenance. The overgrown lawn may indicate declining physical capacity or recent health issues affecting routine household tasks."
+    },
+    "patientKeyInfo": [
+      {
+        "label": "Living",
+        "value": "Lives alone"
+      },
+      {
+        "label": "Mobility",
+        "value": "Walking frame"
+      },
+      {
+        "label": "Cognitive",
+        "value": "Alert, oriented"
+      }
+    ],
+    "scenarioContent": {
+      "excellent": {
+        "presenting": "<strong>Comprehensive Initial Assessment:</strong> 78yo female, 3rd fall in 6 months (most recent: 3 days ago). Lives alone in two-story home. Fell in bathroom, minor bruising to right hip. Self-mobilised to bed, rested overnight. Currently mobile with walking frame indoors. Family increasingly concerned about safety and ability to cope independently. Patient cooperative and willing to discuss concerns.",
+        "medical": "<ul><li>• <strong>Type 2 Diabetes</strong> (diagnosed 2015, diet controlled, HbA1c 48 mmol/mol, regular podiatry review)</li><li>• <strong>Hypertension</strong> (diagnosed 2010, well controlled on Ramipril, home BP monitoring)</li><li>• <strong>Osteoarthritis</strong> (knees and hips, moderate severity, affects mobility, regular paracetamol use)</li><li>• <strong>Mild Cognitive Impairment</strong> (diagnosed 2022, 6-monthly memory clinic review, AMT score 8/10)</li><li>• <strong>Previous TIA</strong> (2 years ago, right-sided weakness resolved, on aspirin, annual stroke clinic review)</li></ul>",
+        "socialEnvironment": "<strong>Home Environment:</strong> Two-storey weatherboard home. Clutter in main living areas, poor lighting in hallway and bathroom. Loose carpet edges noted in lounge room. Kitchen has limited bench space with items stored on floor. Stairs have handrail on one side only.<br><strong>ADL Assessment:</strong> Manages personal hygiene and dressing independently but takes longer. Struggles with housework (vacuuming, mopping) due to balance issues and fatigue.",
+        "socialConcerns": "<strong>Patient's Ideas & Concerns:</strong> Margaret expresses strong desire to remain at home: \"This is my home of 40 years - I'm not ready to leave.\" Worried about becoming a burden on her daughter. Anxious about hospital admission after previous negative experience. Fears losing independence."
+      }
+    }
+  },
+  "introQuestions": [
+    {
+      "id": "intro-1",
+      "area": "initial_contact",
+      "icon": "🤝",
+      "title": "Intro Question 1: Initial Contact",
+      "question": "You arrive at Margaret's home. What is your first action?",
+      "options": [
+        {
+          "text": "Introduce yourself professionally, explain your role and purpose of visit",
+          "points": 10,
+          "feedback": "✅ <strong>Excellent!</strong> Professional introduction with clear explanation of your role and purpose is essential for establishing trust and meeting ethical standards.",
+          "isHardFail": false,
+          "isSoftFail": false
+        },
+        {
+          "text": "Show ID badge and immediately begin asking medical history questions",
+          "points": 5,
+          "feedback": "📋 While showing ID is good, you need to properly introduce yourself, explain your role, and obtain consent before diving into questions.",
+          "isHardFail": false,
+          "isSoftFail": false
+        },
+        {
+          "text": "Walk in and start examining the home environment for hazards",
+          "points": 2,
+          "feedback": "⚠️ This violates consent and privacy. You must introduce yourself, explain your purpose, and get permission before entering or assessing.",
+          "isHardFail": true,
+          "isSoftFail": false,
+          "hardFailType": "privacy_violation"
+        },
+        {
+          "text": "Ask \"Are you Margaret?\" and tell her the ambulance service sent you",
+          "points": 6,
+          "feedback": "👍 Clarifying identity is good, but you need a fuller professional introduction explaining your specific LARU role and getting informed consent.",
+          "isHardFail": false,
+          "isSoftFail": false
+        }
+      ],
+      "metricImpacts": {
+        "trust": 10,
+        "rapport": 8,
+        "clinical": 5,
+        "support": 6,
+        "risk": 8
+      }
+    }
+  ],
+  "mainQuestions": [
+    {
+      "id": 1,
+      "area": "initial",
+      "icon": "🎯",
+      "title": "Level 1: Initial Assessment Approach",
+      "question": "What should be your primary approach for this complex case?",
+      "options": [
+        {
+          "text": "Integrated Multi-Disciplinary Assessment - coordinate simultaneous assessment of clinical, functional, cognitive, social, and environmental factors with patient-centred decision-making",
+          "points": 10,
+          "feedback": "🌟 <strong>Excellent!</strong> Integrated MDT assessment is best practice for complex cases. This approach avoids fragmented care, identifies interdependencies, and enables holistic planning with the patient as an active partner."
+        },
+        {
+          "text": "Comprehensive Falls Assessment - detailed falls risk assessment including home environment, mobility aids, and medication review",
+          "points": 7,
+          "feedback": "✅ <strong>Good focus</strong> on falls risk, but consider that falls are multifactorial. An integrated approach would simultaneously assess all contributing factors for more effective intervention."
+        },
+        {
+          "text": "Urgent Hospital Referral - immediate ED referral for full medical workup given multiple falls",
+          "points": 3,
+          "feedback": "⚠️ LARU exists to prevent unnecessary admissions. Patient is medically stable. Hospital admission carries risks and may not address underlying issues. Comprehensive community assessment is needed."
+        },
+        {
+          "text": "Social Care First - prioritise arranging care package and home modifications",
+          "points": 5,
+          "feedback": "💡 Social care is important but this overlooks clinical complexity (falls, diabetes, cognitive impairment, TIA). Clinical and social factors must be assessed together for effective care planning."
+        }
+      ],
+      "metricImpacts": {
+        "trust": 8,
+        "rapport": 6,
+        "clinical": 12,
+        "support": 8,
+        "risk": 7
+      }
+    }
+  ],
+  "softFailMessages": {
+    "premature_promise": {
+      "title": "Professional Credibility Alert",
+      "subtitle": "Inappropriate Promise Made",
+      "content": "<h3>Professional Practice Concern Identified</h3><p>You made a promise to the patient <strong>before completing a proper assessment</strong>. This raises important concerns about professional practice:</p><ul><li>• <strong>Clinical Safety Risk:</strong> You cannot guarantee outcomes without full assessment</li><li>• <strong>Professional Integrity:</strong> Making promises you may not be able to keep damages credibility</li></ul>",
+      "warning": "<strong style=\"color: #fbbf24;\">⚠️ Critical Learning Point:</strong> NEVER make promises about care outcomes before completing a comprehensive assessment.",
+      "footer": "Always assess fully before making any commitments about care plans or outcomes"
+    },
+    "risk_assessment": {
+      "title": "Risk Assessment Caution",
+      "subtitle": "Safety Considerations Need Attention",
+      "content": "<h3>Risk Assessment Needs Strengthening</h3><p>Your assessment approach could be improved to better identify safety risks.</p>",
+      "warning": "<strong style=\"color: #fbbf24;\">⚠️ Important Reminder:</strong> Thorough risk assessment in LARU practice helps prevent patient harm and unnecessary hospital admissions.",
+      "footer": "Strong risk assessment is essential for safe LARU practice and positive patient outcomes"
+    }
+  },
+  "hardFailMessages": {
+    "duty_of_care": {
+      "icon": "🚨",
+      "title": "Critical Professional Failure",
+      "subtitle": "Breach of Duty of Care",
+      "content": "<h3>Duty of Care Abandoned</h3><p>You chose to return to your vehicle without making contact with Margaret. This is a serious breach of professional duty of care.</p><ul><li>⚠️ You were dispatched specifically for a welfare check</li><li>⚠️ External observations cannot confirm patient safety</li></ul>"
+    },
+    "privacy_violation": {
+      "icon": "🔒",
+      "title": "Privacy & Consent Violation",
+      "subtitle": "Unauthorized Entry",
+      "content": "<h3>Consent Not Obtained</h3><p>You entered Margaret's home and began assessing without proper introduction or consent.</p>"
+    }
+  },
+  "initialMetrics": {
+    "trust": 30,
+    "rapport": 30,
+    "clinical": 0,
+    "support": 0,
+    "risk": 20
+  }
+}
