@@ -1,0 +1,349 @@
+{
+  "id": "case_017",
+  "title": "Silent Weight: Young Adult Mental Health Crisis at Home",
+  "difficulty": "intermediate",
+  "estimatedTime": "15-20 minutes",
+  "patientInfo": {
+    "name": "Daniel Thompson",
+    "age": 27,
+    "gender": "Male",
+    "location": "Small rented unit in a suburban Brisbane street; patient seated on couch, curtains closed, low lighting",
+    "initialPresentation": "QAS dispatched for a welfare check after Daniel texted a friend saying he was \"overwhelmed and can’t do this anymore.\" On arrival, Daniel appears withdrawn, tearful, and anxious. No immediate physical injuries noted."
+  },
+  "performanceMetrics": [
+    {
+      "id": "patient_trust",
+      "name": "Patient Trust",
+      "description": "Building patient confidence and trust",
+      "weight": 1
+    },
+    {
+      "id": "patient_rapport",
+      "name": "Patient Rapport",
+      "description": "Communication quality and relationship building",
+      "weight": 1
+    },
+    {
+      "id": "clinical_needs",
+      "name": "Clinical Needs Identified",
+      "description": "Thoroughness of medical assessment",
+      "weight": 1
+    },
+    {
+      "id": "support_needs",
+      "name": "Support Needs Identified",
+      "description": "Recognition of social and community care needs",
+      "weight": 1
+    },
+    {
+      "id": "risk_assessment",
+      "name": "Risk Assessment",
+      "description": "Identification of safety concerns and clinical risks",
+      "weight": 1
+    },
+    {
+      "id": "safety_planning",
+      "name": "Safety Planning",
+      "description": "Creation of safety nets and follow-up advice",
+      "weight": 1
+    },
+    {
+      "id": "care_coordination",
+      "name": "Care Coordination",
+      "description": "Arrangement of referrals and handover to services",
+      "weight": 1
+    },
+    {
+      "id": "care_pathway",
+      "name": "Care Pathway Selection",
+      "description": "Choosing the appropriate disposition and pathway",
+      "weight": 1
+    }
+  ],
+  "questions": {
+    "q1": {
+      "id": "q1",
+      "text": "What is your most appropriate initial approach on making contact with Daniel?",
+      "context": "Daniel avoids eye contact and speaks quietly.",
+      "answers": [
+        {
+          "text": "Introduce yourself, explain your role, ask permission to sit down, and acknowledge that this may be a difficult time for him.",
+          "nextQuestion": "q2",
+          "metricsImpact": {
+            "patient_trust": 20,
+            "patient_rapport": 20
+          },
+          "feedback": "A trauma-informed, respectful introduction helps reduce perceived threat and establishes trust and rapport, which are critical foundations for mental health assessment within LARU."
+        },
+        {
+          "text": "Begin asking direct questions about why QAS was called and whether he intends to harm himself.",
+          "nextQuestion": "q2",
+          "metricsImpact": {
+            "patient_trust": -10,
+            "patient_rapport": -15
+          },
+          "feedback": "Jumping straight into risk questioning without rapport can increase defensiveness and reduce engagement, undermining effective assessment."
+        },
+        {
+          "text": "Tell Daniel you need to assess him quickly so you can decide whether to take him to hospital.",
+          "nextQuestion": "q2",
+          "metricsImpact": {
+            "patient_trust": -15,
+            "patient_rapport": -10
+          },
+          "feedback": "This task-focused approach may escalate anxiety and reinforces fear of loss of control, which is counterproductive in mental health care."
+        }
+      ]
+    },
+    "q2": {
+      "id": "q2",
+      "text": "Which initial clinical assessment is most appropriate at this stage?",
+      "context": "Daniel reports poor sleep, low appetite, and ongoing anxiety.",
+      "answers": [
+        {
+          "text": "Conduct a full set of vital signs and a brief physical assessment while explaining why this is important.",
+          "nextQuestion": "q3",
+          "metricsImpact": {
+            "clinical_needs": 15,
+            "patient_trust": 5
+          },
+          "feedback": "Mental health presentations still require medical screening to exclude physiological contributors, consistent with LARU principles."
+        },
+        {
+          "text": "Skip physical assessment and focus only on Daniel’s emotions and thoughts.",
+          "nextQuestion": "q3",
+          "metricsImpact": {
+            "clinical_needs": -15
+          },
+          "feedback": "Failing to assess physical health risks missing contributing or compounding medical issues."
+        }
+      ]
+    },
+    "q3": {
+      "id": "q3",
+      "text": "How should you explore Daniel’s mental health history?",
+      "context": "Vital signs: HR 96, BP 128/78, RR 18, SpO₂ 98%, BGL 5.4 mmol/L.",
+      "answers": [
+        {
+          "text": "Use open-ended questions about previous mental health diagnoses, treatments, and recent stressors.",
+          "nextQuestion": "q4",
+          "metricsImpact": {
+            "patient_rapport": 15,
+            "clinical_needs": 15
+          },
+          "feedback": "Open-ended questioning supports rapport and yields richer clinical information."
+        },
+        {
+          "text": "Ask only whether he has ever been diagnosed with depression or anxiety.",
+          "nextQuestion": "q4",
+          "metricsImpact": {
+            "clinical_needs": -5
+          },
+          "feedback": "This narrow approach may miss relevant context such as recent triggers or treatment adherence."
+        },
+        {
+          "text": "Avoid discussing history to prevent upsetting him.",
+          "nextQuestion": "q4",
+          "metricsImpact": {
+            "clinical_needs": -20,
+            "risk_assessment": -10
+          },
+          "feedback": "Avoidance limits understanding of risk and undermines safe decision-making."
+        }
+      ]
+    },
+    "q4": {
+      "id": "q4",
+      "text": "Daniel says, \"Sometimes I wish I wouldn’t wake up.\" What is your best response?",
+      "context": "He becomes tearful but continues talking.",
+      "answers": [
+        {
+          "text": "Acknowledge his feelings and ask directly about thoughts of suicide or self-harm.",
+          "nextQuestion": "q5",
+          "metricsImpact": {
+            "risk_assessment": 25,
+            "patient_trust": 10
+          },
+          "feedback": "Direct, compassionate questioning is essential for accurate suicide risk assessment and does not increase risk."
+        },
+        {
+          "text": "Reassure him that many people feel this way and move on to another topic.",
+          "nextQuestion": "q5",
+          "metricsImpact": {
+            "risk_assessment": -20
+          },
+          "feedback": "Normalising without assessment risks missing active suicidal ideation."
+        },
+        {
+          "text": "Document the comment but avoid asking further questions about suicide.",
+          "nextQuestion": "q5",
+          "metricsImpact": {
+            "risk_assessment": -25
+          },
+          "feedback": "Failure to explore suicidal thoughts represents a serious gap in care."
+        }
+      ]
+    },
+    "q5": {
+      "id": "q5",
+      "text": "Daniel discloses passive suicidal thoughts but denies a current plan. What should you assess next?",
+      "context": "He states he feels isolated since losing his job.",
+      "answers": [
+        {
+          "text": "Assess protective factors, supports, substance use, and access to means.",
+          "nextQuestion": "q6",
+          "metricsImpact": {
+            "risk_assessment": 20,
+            "support_needs": 15
+          },
+          "feedback": "A comprehensive risk formulation includes both risk and protective factors."
+        },
+        {
+          "text": "Accept his denial of a plan and assume risk is low.",
+          "nextQuestion": "q6",
+          "metricsImpact": {
+            "risk_assessment": -15
+          },
+          "feedback": "Risk exists on a spectrum and requires broader exploration."
+        }
+      ]
+    },
+    "q6": {
+      "id": "q6",
+      "text": "Which action best addresses Daniel’s immediate safety?",
+      "context": "He lives alone; no weapons noted, but medications are present in the unit.",
+      "answers": [
+        {
+          "text": "Collaboratively discuss ways to reduce immediate risks, including safe storage of medications.",
+          "nextQuestion": "q7",
+          "metricsImpact": {
+            "safety_planning": 25,
+            "patient_trust": 10
+          },
+          "feedback": "Collaborative safety planning empowers the patient and aligns with LARU best practice."
+        },
+        {
+          "text": "Confiscate medications without discussion.",
+          "nextQuestion": "q7",
+          "metricsImpact": {
+            "patient_trust": -15,
+            "safety_planning": -5
+          },
+          "feedback": "Unilateral actions can damage trust and engagement."
+        },
+        {
+          "text": "Do nothing as there is no active plan.",
+          "nextQuestion": "q7",
+          "metricsImpact": {
+            "safety_planning": -20
+          },
+          "feedback": "Missed opportunity to reduce foreseeable risk."
+        }
+      ]
+    },
+    "q7": {
+      "id": "q7",
+      "text": "How do you assess Daniel’s capacity to consent to a LARU-based care pathway?",
+      "context": "Daniel is calm, coherent, and able to explain his situation.",
+      "answers": [
+        {
+          "text": "Confirm he understands options, risks, benefits, and can communicate a clear choice.",
+          "nextQuestion": "q8",
+          "metricsImpact": {
+            "clinical_needs": 10,
+            "care_pathway": 15
+          },
+          "feedback": "Capacity assessment supports ethical and lawful decision-making."
+        },
+        {
+          "text": "Assume he lacks capacity due to suicidal thoughts.",
+          "nextQuestion": "q8",
+          "metricsImpact": {
+            "care_pathway": -15
+          },
+          "feedback": "Suicidal ideation alone does not equal lack of capacity."
+        }
+      ]
+    },
+    "q8": {
+      "id": "q8",
+      "text": "Which referral option best aligns with LARU principles at this point?",
+      "context": "Daniel is open to support and prefers to avoid ED if safe.",
+      "answers": [
+        {
+          "text": "Arrange referral to the local Acute Care Team / crisis mental health service with safety planning.",
+          "nextQuestion": "q9",
+          "metricsImpact": {
+            "care_coordination": 20,
+            "care_pathway": 25
+          },
+          "feedback": "Using community-based crisis services aligns with LARU’s aim to provide the right care in the right place."
+        },
+        {
+          "text": "Transport Daniel to ED by default.",
+          "nextQuestion": "q9",
+          "metricsImpact": {
+            "care_pathway": -15
+          },
+          "feedback": "Automatic ED transport may be unnecessary and contrary to patient-centred care."
+        }
+      ]
+    },
+    "q9": {
+      "id": "q9",
+      "text": "What follow-up advice should be included before leaving Daniel at home?",
+      "context": "The crisis team will make contact within 2 hours.",
+      "answers": [
+        {
+          "text": "Provide written and verbal safety advice, crisis numbers, and clear instructions on when to re-contact QAS.",
+          "nextQuestion": "q10",
+          "metricsImpact": {
+            "safety_planning": 20,
+            "patient_trust": 10
+          },
+          "feedback": "Clear follow-up and escalation advice strengthens safety nets."
+        },
+        {
+          "text": "Assume the crisis team will cover all follow-up needs.",
+          "nextQuestion": "q10",
+          "metricsImpact": {
+            "safety_planning": -15
+          },
+          "feedback": "Gaps in advice can leave patients vulnerable during transition periods."
+        }
+      ]
+    },
+    "q10": {
+      "id": "q10",
+      "text": "How should you complete handover and documentation for this case?",
+      "context": "Care is being transitioned to community mental health services.",
+      "answers": [
+        {
+          "text": "Provide a detailed clinical handover including risk factors, protective factors, and agreed safety plan.",
+          "nextQuestion": "summary",
+          "metricsImpact": {
+            "care_coordination": 25,
+            "clinical_needs": 10
+          },
+          "feedback": "Comprehensive handover ensures continuity of care and shared understanding of risk."
+        },
+        {
+          "text": "Document minimal details as the patient is not being transported.",
+          "nextQuestion": "summary",
+          "metricsImpact": {
+            "care_coordination": -20
+          },
+          "feedback": "Incomplete documentation risks fragmentation of care."
+        }
+      ]
+    }
+  },
+  "summary": {
+    "text": "Daniel remains at home with an agreed safety plan and timely follow-up by the crisis mental health team. He reports feeling heard and supported, with reduced immediate distress. Appropriate use of the LARU framework avoids unnecessary ED transport while maintaining safety.",
+    "keyLearningPoints": [
+      "Trauma-informed communication is foundational to effective mental health care.",
+      "Comprehensive suicide risk assessment includes both risk and protective factors.",
+      "LARU pathways support safe, patient-centred alternatives to emergency department transport."
+    ]
+  }
+}
