@@ -1,0 +1,728 @@
+{
+  "title": "LARU Paramedic Simulation - Complex Case",
+  "patient": {
+    "name": "Margaret Thompson",
+    "age": 78,
+    "gender": "female"
+  },
+  "dispatch": {
+    "location": "123 Residential Street, Brisbane",
+    "callReason": "Fall at home, patient confused",
+    "knownHistory": "Type 2 diabetes, hypertension, lives alone",
+    "time": "14:30"
+  },
+  "arrival": {
+    "sceneDescription": "You arrive at a well-maintained home. The patient is sitting in a chair in the living room, appearing anxious and disoriented."
+  },
+  "guidelines": {
+    "title": "LARU Assessment Guidelines",
+    "text": "Focus on comprehensive assessment, patient-centered care, and appropriate referral pathways. Consider all available community support options before transport."
+  },
+  "performanceMetrics": [
+    {
+      "id": "patientRapport",
+      "label": "Patient Rapport",
+      "initialValue": 50
+    },
+    {
+      "id": "clinicalAssessment",
+      "label": "Clinical Assessment",
+      "initialValue": 50
+    },
+    {
+      "id": "safetyConcerns",
+      "label": "Safety Awareness",
+      "initialValue": 50
+    },
+    {
+      "id": "resourceUtilization",
+      "label": "Resource Utilization",
+      "initialValue": 50
+    }
+  ],
+  "questionSets": [
+    {
+      "id": "initial-contact",
+      "summaryTitle": "Initial Patient Contact Summary",
+      "questions": [
+        {
+          "id": "q1",
+          "text": "How do you begin your interaction with Margaret?",
+          "options": [
+            {
+              "text": "Introduce yourself warmly, explain your role, and ask how she's feeling",
+              "impact": {
+                "patientRapport": 10,
+                "clinicalAssessment": 5
+              },
+              "caseInfo": "Patient appears more relaxed after warm introduction"
+            },
+            {
+              "text": "Immediately begin taking vital signs without much conversation",
+              "impact": {
+                "patientRapport": -10,
+                "clinicalAssessment": 5
+              },
+              "trigger": {
+                "type": "warning",
+                "title": "Patient Rapport Concern",
+                "message": "Rushing into clinical procedures without building rapport can increase patient anxiety and reduce cooperation."
+              }
+            },
+            {
+              "text": "Ask detailed medical history questions before introducing yourself",
+              "impact": {
+                "patientRapport": -5,
+                "clinicalAssessment": 3
+              }
+            },
+            {
+              "text": "Speak loudly and slowly, assuming she has hearing or cognitive impairment",
+              "impact": {
+                "patientRapport": -15,
+                "safetyConcerns": -5
+              },
+              "trigger": {
+                "type": "warning",
+                "title": "Assumptions About Patient",
+                "message": "Making assumptions about a patient's abilities without assessment can be disrespectful and affect care quality."
+              }
+            }
+          ]
+        },
+        {
+          "id": "q2",
+          "text": "Margaret mentions she fell this morning. What's your priority?",
+          "options": [
+            {
+              "text": "Ask about the circumstances of the fall, any injuries, and if she hit her head",
+              "impact": {
+                "clinicalAssessment": 10,
+                "safetyConcerns": 10
+              },
+              "caseInfo": "Fall occurred around 8am when getting out of bed. No head strike. Minor bruising on right hip."
+            },
+            {
+              "text": "Immediately check for fractures by palpating all limbs",
+              "impact": {
+                "clinicalAssessment": 5,
+                "patientRapport": -5
+              }
+            },
+            {
+              "text": "Document the fall and move on to other assessment areas",
+              "impact": {
+                "clinicalAssessment": -10,
+                "safetyConcerns": -10
+              },
+              "trigger": {
+                "type": "danger",
+                "title": "Incomplete Fall Assessment",
+                "message": "Falls require thorough investigation including mechanism, injuries, and underlying causes. This is critical for LARU decision-making."
+              }
+            },
+            {
+              "text": "Ask if she's fallen before and explore possible contributing factors",
+              "impact": {
+                "clinicalAssessment": 15,
+                "safetyConcerns": 15
+              },
+              "caseInfo": "Patient reports 3 falls in the past 6 months. Admits to feeling dizzy occasionally. Wears bifocals."
+            }
+          ]
+        },
+        {
+          "id": "q3",
+          "text": "While talking, you notice Margaret seems confused about what day it is. How do you assess this?",
+          "options": [
+            {
+              "text": "Conduct a formal cognitive assessment (orientation to time, place, person)",
+              "impact": {
+                "clinicalAssessment": 15,
+                "patientRapport": 5
+              },
+              "caseInfo": "Margaret is oriented to person and place but thinks it's Tuesday (it's Thursday). Recalls her medications but not exact doses."
+            },
+            {
+              "text": "Ignore it as normal aging",
+              "impact": {
+                "clinicalAssessment": -15,
+                "safetyConcerns": -10
+              },
+              "trigger": {
+                "type": "danger",
+                "title": "Missed Clinical Sign",
+                "message": "Confusion in elderly patients after a fall can indicate serious conditions like head injury, infection, or metabolic disturbance."
+              }
+            },
+            {
+              "text": "Ask family members if this confusion is normal for her",
+              "impact": {
+                "clinicalAssessment": 10,
+                "safetyConcerns": 5
+              },
+              "caseInfo": "No family present. Neighbor who called states Margaret is 'usually very sharp'."
+            },
+            {
+              "text": "Check blood glucose level immediately",
+              "impact": {
+                "clinicalAssessment": 12,
+                "safetyConcerns": 8
+              },
+              "caseInfo": "Blood glucose reads 3.2 mmol/L (low). Patient is diabetic on oral medication."
+            }
+          ]
+        },
+        {
+          "id": "q4",
+          "text": "What are your vital signs priorities for Margaret?",
+          "options": [
+            {
+              "text": "Full set: BP, HR, RR, SpO2, temperature, and blood glucose",
+              "impact": {
+                "clinicalAssessment": 15,
+                "safetyConcerns": 10
+              },
+              "caseInfo": "Vitals: BP 145/88, HR 92, RR 18, SpO2 96% on air, Temp 36.8°C, BSL 3.2 mmol/L"
+            },
+            {
+              "text": "Just BP and heart rate since she's stable",
+              "impact": {
+                "clinicalAssessment": -10,
+                "safetyConcerns": -10
+              },
+              "trigger": {
+                "type": "warning",
+                "title": "Incomplete Assessment",
+                "message": "LARU cases require comprehensive vital signs to identify subtle deterioration and inform referral decisions."
+              }
+            },
+            {
+              "text": "Postural blood pressure measurement given fall history",
+              "impact": {
+                "clinicalAssessment": 18,
+                "safetyConcerns": 15
+              },
+              "caseInfo": "Postural drop noted: lying BP 145/88, standing BP 110/65 (drop of 35/23 mmHg). Patient reports dizziness on standing."
+            },
+            {
+              "text": "Vitals aren't necessary since she's talking and alert",
+              "impact": {
+                "clinicalAssessment": -20,
+                "safetyConcerns": -15
+              },
+              "trigger": {
+                "type": "danger",
+                "title": "Critical Assessment Failure",
+                "message": "Vital signs are mandatory for all LARU assessments regardless of patient appearance. This is a fundamental clinical requirement."
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "medication-review",
+      "summaryTitle": "Medication Review Summary",
+      "questions": [
+        {
+          "id": "q5",
+          "text": "You need to review Margaret's medications. What's your approach?",
+          "options": [
+            {
+              "text": "Ask her to show you all her medications and check them against her list",
+              "impact": {
+                "clinicalAssessment": 15,
+                "safetyConcerns": 10,
+                "resourceUtilization": 5
+              },
+              "caseInfo": "Margaret brings out 8 medication bottles. She has a handwritten list but it's outdated. Several medications expired."
+            },
+            {
+              "text": "Just ask what medications she takes",
+              "impact": {
+                "clinicalAssessment": 5,
+                "safetyConcerns": -5
+              },
+              "caseInfo": "Margaret lists some medications but seems uncertain about names and doses."
+            },
+            {
+              "text": "Check medications, doses, and ask about adherence patterns",
+              "impact": {
+                "clinicalAssessment": 18,
+                "safetyConcerns": 15,
+                "patientRapport": 5
+              },
+              "caseInfo": "Current meds: Metformin 1000mg BD, Perindopril 4mg daily, Atorvastatin 40mg nocte. Margaret admits she 'sometimes forgets' evening doses."
+            },
+            {
+              "text": "Medications aren't relevant to today's fall",
+              "impact": {
+                "clinicalAssessment": -15,
+                "safetyConcerns": -15
+              },
+              "trigger": {
+                "type": "danger",
+                "title": "Missed Contributing Factor",
+                "message": "Medications are frequently implicated in falls (antihypertensives, diabetes medications). This review is essential for LARU."
+              }
+            }
+          ]
+        },
+        {
+          "id": "q6",
+          "text": "Margaret's blood glucose is low (3.2 mmol/L). How do you manage this?",
+          "options": [
+            {
+              "text": "Give her some juice or glucose tablets and recheck in 15 minutes",
+              "impact": {
+                "clinicalAssessment": 15,
+                "safetyConcerns": 10
+              },
+              "caseInfo": "BSL rechecked after glucose: 6.8 mmol/L. Margaret feels less confused and more alert."
+            },
+            {
+              "text": "Immediately transport to hospital for hypoglycemia",
+              "impact": {
+                "clinicalAssessment": 5,
+                "safetyConcerns": 5,
+                "resourceUtilization": -15
+              },
+              "trigger": {
+                "type": "warning",
+                "title": "Unnecessary Transport",
+                "message": "Mild hypoglycemia in conscious patients can often be managed on-scene with appropriate follow-up, avoiding unnecessary ED presentations."
+              }
+            },
+            {
+              "text": "Give glucose, observe, educate about recognition and management of hypoglycemia",
+              "impact": {
+                "clinicalAssessment": 18,
+                "patientRapport": 10,
+                "safetyConcerns": 15,
+                "resourceUtilization": 10
+              },
+              "caseInfo": "BSL improves to 6.8. You educate Margaret about early warning signs and keeping glucose sources handy. She understands and agrees to GP follow-up."
+            },
+            {
+              "text": "Tell her to eat something and continue your assessment",
+              "impact": {
+                "clinicalAssessment": 8,
+                "safetyConcerns": 5
+              }
+            }
+          ]
+        },
+        {
+          "id": "q7",
+          "text": "You notice Margaret has a Webster pack (medication organizer). What do you do?",
+          "options": [
+            {
+              "text": "Check if today's medications have been taken correctly",
+              "impact": {
+                "clinicalAssessment": 12,
+                "safetyConcerns": 10
+              },
+              "caseInfo": "Thursday morning medications still in pack - not taken. Margaret confused about which day it is."
+            },
+            {
+              "text": "Ignore it as it's not relevant",
+              "impact": {
+                "clinicalAssessment": -10,
+                "safetyConcerns": -10
+              }
+            },
+            {
+              "text": "Ask who fills the Webster pack and how often, assess medication management system",
+              "impact": {
+                "clinicalAssessment": 15,
+                "safetyConcerns": 15,
+                "resourceUtilization": 10
+              },
+              "caseInfo": "Local pharmacist fills pack weekly. Margaret usually manages well but has missed doses this week. Suggests possible early cognitive decline or acute illness."
+            },
+            {
+              "text": "Recommend she goes to hospital because she can't manage medications",
+              "impact": {
+                "patientRapport": -10,
+                "resourceUtilization": -10
+              },
+              "trigger": {
+                "type": "warning",
+                "title": "Premature Escalation",
+                "message": "Medication management issues often have community solutions (pharmacy services, family support, home care) before requiring hospitalization."
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "home-safety",
+      "summaryTitle": "Home Safety Assessment Summary",
+      "questions": [
+        {
+          "id": "q8",
+          "text": "You need to assess fall risks in Margaret's home. What do you look for?",
+          "options": [
+            {
+              "text": "Quickly scan the room for obvious hazards",
+              "impact": {
+                "safetyConcerns": 5,
+                "clinicalAssessment": 3
+              }
+            },
+            {
+              "text": "Systematically assess: lighting, floor surfaces, furniture placement, bathroom safety, footwear",
+              "impact": {
+                "safetyConcerns": 20,
+                "clinicalAssessment": 10,
+                "resourceUtilization": 10
+              },
+              "caseInfo": "Identified: poor lighting in hallway, loose bathroom mat, no grab rails, wearing smooth-soled slippers, walking aid (frame) in bedroom but not being used."
+            },
+            {
+              "text": "Home safety isn't part of your role",
+              "impact": {
+                "safetyConcerns": -20,
+                "clinicalAssessment": -10
+              },
+              "trigger": {
+                "type": "danger",
+                "title": "Missed LARU Core Function",
+                "message": "Home safety assessment is a fundamental component of LARU. Falls risk management requires environmental assessment and modification."
+              }
+            },
+            {
+              "text": "Tell Margaret her home is unsafe and she needs residential care",
+              "impact": {
+                "patientRapport": -20,
+                "safetyConcerns": -10,
+                "resourceUtilization": -15
+              },
+              "trigger": {
+                "type": "danger",
+                "title": "Patient Autonomy Violation",
+                "message": "Making judgments about living situations without proper assessment and patient involvement undermines LARU principles of patient-centered care."
+              }
+            }
+          ]
+        },
+        {
+          "id": "q9",
+          "text": "Margaret tells you she lives alone and has no family nearby. How do you explore her support network?",
+          "options": [
+            {
+              "text": "Ask about friends, neighbors, community connections, and current support services",
+              "impact": {
+                "patientRapport": 10,
+                "safetyConcerns": 10,
+                "resourceUtilization": 15
+              },
+              "caseInfo": "Neighbor checks on her daily. Attends local seniors group twice weekly. Has NDIS support worker once per week. Son lives interstate, calls weekly."
+            },
+            {
+              "text": "Document 'lives alone' and move on",
+              "impact": {
+                "safetyConcerns": -10,
+                "resourceUtilization": -10
+              },
+              "trigger": {
+                "type": "warning",
+                "title": "Incomplete Social Assessment",
+                "message": "Understanding support networks is critical for safe discharge planning and appropriate LARU referrals."
+              }
+            },
+            {
+              "text": "Suggest she needs full-time care based on living alone",
+              "impact": {
+                "patientRapport": -15,
+                "resourceUtilization": -10
+              }
+            },
+            {
+              "text": "Explore current supports, identify gaps, and discuss acceptable interventions with patient",
+              "impact": {
+                "patientRapport": 15,
+                "safetyConcerns": 15,
+                "resourceUtilization": 20,
+                "clinicalAssessment": 10
+              },
+              "caseInfo": "Margaret open to increased support. Willing to try Meals on Wheels, occupational therapy assessment, and personal alarm system. Wants to remain independent at home."
+            }
+          ]
+        },
+        {
+          "id": "q10",
+          "text": "Margaret needs better bathroom safety. What's your recommendation?",
+          "options": [
+            {
+              "text": "Tell her to buy grab rails from a hardware store",
+              "impact": {
+                "safetyConcerns": 5,
+                "resourceUtilization": 3
+              }
+            },
+            {
+              "text": "Refer to occupational therapy for home assessment and modifications",
+              "impact": {
+                "safetyConcerns": 18,
+                "resourceUtilization": 20,
+                "patientRapport": 10
+              },
+              "caseInfo": "OT referral arranged. Will assess bathroom, recommend grab rails, shower chair, and other aids. May be subsidized through aged care programs."
+            },
+            {
+              "text": "This isn't urgent, focus on medical issues",
+              "impact": {
+                "safetyConcerns": -15,
+                "resourceUtilization": -10
+              },
+              "trigger": {
+                "type": "warning",
+                "title": "Missed Prevention Opportunity",
+                "message": "Environmental modification is proven to reduce falls. Addressing this now prevents future emergency calls and injuries."
+              }
+            },
+            {
+              "text": "She should move to assisted living if her home isn't safe",
+              "impact": {
+                "patientRapport": -20,
+                "safetyConcerns": -10
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "care-planning",
+      "summaryTitle": "Care Planning and Disposition Summary",
+      "questions": [
+        {
+          "id": "q11",
+          "text": "Based on your assessment, Margaret has: hypoglycemia (resolved), postural hypotension, fall risk, minor bruising, medication management issues. What's your plan?",
+          "options": [
+            {
+              "text": "Transport to ED for comprehensive assessment",
+              "impact": {
+                "resourceUtilization": -15,
+                "patientRapport": -5
+              },
+              "trigger": {
+                "type": "warning",
+                "title": "Potential Over-Escalation",
+                "message": "Consider if community-based interventions could address these issues appropriately before defaulting to ED transport."
+              }
+            },
+            {
+              "text": "Arrange urgent GP review within 24 hours for medication review and falls assessment",
+              "impact": {
+                "clinicalAssessment": 15,
+                "resourceUtilization": 18,
+                "safetyConcerns": 10,
+                "patientRapport": 10
+              },
+              "caseInfo": "GP appointment arranged for tomorrow morning. GP aware of hypoglycemia, postural drops, and falls risk. Will review medications and arrange investigations."
+            },
+            {
+              "text": "Leave detailed documentation and suggest she contact her GP when convenient",
+              "impact": {
+                "safetyConcerns": -15,
+                "resourceUtilization": 5,
+                "patientRapport": 5
+              },
+              "trigger": {
+                "type": "warning",
+                "title": "Insufficient Follow-up",
+                "message": "Significant clinical findings require active follow-up arrangements, not passive suggestions."
+              }
+            },
+            {
+              "text": "Develop comprehensive care plan: urgent GP review, OT referral, medication review, falls clinic referral, increased home support",
+              "impact": {
+                "clinicalAssessment": 20,
+                "resourceUtilization": 25,
+                "safetyConcerns": 20,
+                "patientRapport": 15
+              },
+              "caseInfo": "Multi-faceted plan developed with patient input. GP review tomorrow, OT within 1 week, falls clinic referral, pharmacist medication review, neighbor to check daily, personal alarm arranged."
+            }
+          ]
+        },
+        {
+          "id": "q12",
+          "text": "Margaret asks if she really needs to go to hospital. How do you respond?",
+          "options": [
+            {
+              "text": "Explain findings, discuss options including staying home with appropriate support and follow-up",
+              "impact": {
+                "patientRapport": 20,
+                "resourceUtilization": 15,
+                "safetyConcerns": 10
+              },
+              "caseInfo": "Margaret relieved she can stay home. Understands the plan and agrees to all follow-up appointments. Thanks you for listening to her wishes."
+            },
+            {
+              "text": "Tell her it's her choice but recommend hospital to be safe",
+              "impact": {
+                "patientRapport": 5,
+                "resourceUtilization": -5
+              }
+            },
+            {
+              "text": "Insist she must go to hospital or sign a refusal form",
+              "impact": {
+                "patientRapport": -20,
+                "safetyConcerns": -10
+              },
+              "trigger": {
+                "type": "danger",
+                "title": "Patient Autonomy Violation",
+                "message": "Coercive language and false dichotomies undermine patient autonomy. LARU provides informed choice with appropriate community pathways."
+              }
+            },
+            {
+              "text": "Acknowledge her preference, explain why community management is appropriate here, ensure she understands the plan and warning signs to call back",
+              "impact": {
+                "patientRapport": 25,
+                "resourceUtilization": 20,
+                "safetyConcerns": 18,
+                "clinicalAssessment": 15
+              },
+              "caseInfo": "Excellent shared decision-making. Margaret understands when to call 000 (severe dizziness, another fall, confusion worsening, chest pain). Confident in plan. Empowered to self-manage with support."
+            }
+          ]
+        },
+        {
+          "id": "q13",
+          "text": "Before leaving, what safety netting do you provide?",
+          "options": [
+            {
+              "text": "Give verbal advice to call back if she feels worse",
+              "impact": {
+                "safetyConcerns": 5,
+                "patientRapport": 3
+              }
+            },
+            {
+              "text": "Provide written safety netting advice with specific red flags and contact numbers",
+              "impact": {
+                "safetyConcerns": 18,
+                "patientRapport": 12,
+                "resourceUtilization": 10
+              },
+              "caseInfo": "Written instructions provided: call 000 if severe dizziness, falls, chest pain, increasing confusion. GP number, after-hours medical service, neighbor's contact included."
+            },
+            {
+              "text": "Tell her to call 000 for anything concerning",
+              "impact": {
+                "safetyConcerns": 8,
+                "resourceUtilization": -5
+              }
+            },
+            {
+              "text": "Comprehensive safety netting: written red flags, ensure neighbor aware of plan, confirm patient/neighbor understanding, provide multiple contact pathways including follow-up call",
+              "impact": {
+                "safetyConcerns": 25,
+                "patientRapport": 20,
+                "resourceUtilization": 15,
+                "clinicalAssessment": 10
+              },
+              "caseInfo": "Excellent safety plan. Neighbor briefed and agrees to check evening and morning. You'll call tomorrow to ensure GP appointment attended. Margaret has clear escalation pathway. Red flag symptoms understood."
+            }
+          ]
+        },
+        {
+          "id": "q14",
+          "text": "What documentation and referrals do you complete before leaving?",
+          "options": [
+            {
+              "text": "Basic patient report form only",
+              "impact": {
+                "clinicalAssessment": 5,
+                "resourceUtilization": -10
+              }
+            },
+            {
+              "text": "Detailed clinical notes and GP notification",
+              "impact": {
+                "clinicalAssessment": 15,
+                "resourceUtilization": 15,
+                "safetyConcerns": 10
+              },
+              "caseInfo": "Comprehensive documentation sent to GP. Clinical findings, management, and follow-up plan clearly communicated."
+            },
+            {
+              "text": "Complete documentation including: detailed assessment, vital signs trends, management, all referrals initiated, safety plan, patient education provided",
+              "impact": {
+                "clinicalAssessment": 25,
+                "resourceUtilization": 25,
+                "safetyConcerns": 20,
+                "patientRapport": 15
+              },
+              "caseInfo": "Exemplary documentation. GP notified with clinical urgency. OT referral submitted. Falls clinic referral complete. Pharmacist informed. Copy provided to patient. Clear audit trail for quality assurance."
+            },
+            {
+              "text": "Minimal notes since she's not being transported",
+              "impact": {
+                "clinicalAssessment": -15,
+                "resourceUtilization": -20,
+                "safetyConcerns": -15
+              },
+              "trigger": {
+                "type": "danger",
+                "title": "Documentation Failure",
+                "message": "Non-transport cases require thorough documentation for continuity of care, medico-legal protection, and quality improvement. This is a critical LARU requirement."
+              }
+            }
+          ]
+        },
+        {
+          "id": "q15",
+          "text": "One week later, you learn Margaret is doing well at home with new supports in place. What does this outcome tell you?",
+          "options": [
+            {
+              "text": "LARU successfully prevented an unnecessary ED presentation while ensuring appropriate care",
+              "impact": {
+                "resourceUtilization": 20,
+                "patientRapport": 15,
+                "safetyConcerns": 15
+              },
+              "caseInfo": "This represents optimal LARU practice: patient remained independent, received appropriate interventions, avoided ED, and system resources used efficiently."
+            },
+            {
+              "text": "You got lucky that nothing bad happened",
+              "impact": {
+                "clinicalAssessment": -10,
+                "resourceUtilization": -10
+              },
+              "trigger": {
+                "type": "warning",
+                "title": "Misunderstanding LARU Principles",
+                "message": "This wasn't luck - it was evidence-based assessment, appropriate risk stratification, comprehensive care planning, and effective use of community resources."
+              }
+            },
+            {
+              "text": "She probably should have gone to hospital to be safer",
+              "impact": {
+                "resourceUtilization": -15,
+                "patientRapport": -10
+              }
+            },
+            {
+              "text": "This demonstrates the value of patient-centered care, comprehensive assessment, appropriate risk stratification, and effective community resource utilization",
+              "impact": {
+                "clinicalAssessment": 20,
+                "resourceUtilization": 25,
+                "patientRapport": 20,
+                "safetyConcerns": 20
+              },
+              "caseInfo": "Excellent LARU outcome. Patient maintained independence and dignity, received timely appropriate care, community resources effectively mobilized, ED avoided unnecessary burden. This is the model for modern paramedicine."
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}
