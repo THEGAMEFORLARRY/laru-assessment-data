@@ -1,0 +1,57 @@
+{
+  "patient": {
+    "name": "Margaret Thompson",
+    "age": 68,
+    "gender": "Female"
+  },
+  "dispatch": {
+    "location": "42 Maple Street, Residential Area",
+    "callReason": "68-year-old female, difficulty breathing",
+    "knownHistory": "COPD, hypertension, uses home oxygen",
+    "time": "14:23"
+  },
+  "arrival": {
+    "sceneDescription": "You arrive at a well-maintained suburban home. The patient's husband meets you at the door, appearing anxious. The home is clean and organized, with medical equipment visible in the living room."
+  },
+  "guidelines": {
+    "title": "Respiratory Distress Protocol",
+    "text": "Follow COPD exacerbation guidelines. Monitor oxygen saturation, respiratory rate, and level of consciousness. Consider nebulizer treatment if indicated."
+  },
+  "avatars": [
+    {
+      "id": 0,
+      "icon": "👩",
+      "name": "Margaret"
+    },
+    {
+      "id": 1,
+      "icon": "👨",
+      "name": "Robert (Husband)"
+    }
+  ],
+  "performanceMetrics": [
+    {
+      "id": "assessment",
+      "label": "Assessment",
+      "initialValue": 0
+    },
+    {
+      "id": "treatment",
+      "label": "Treatment",
+      "initialValue": 0
+    },
+    {
+      "id": "communication",
+      "label": "Communication",
+      "initialValue": 0
+    }
+  ],
+  "questionSets": [
+    {
+      "setId": "initial_assessment",
+      "title": "Initial Patient Assessment",
+      "summaryTitle": "Assessment Complete",
+      "questions": []
+    }
+  ]
+}
