@@ -1,0 +1,1416 @@
+{
+  "id": "margaret_wilson_001",
+  "version": "2.0",
+  "title": "Margaret Wilson - Declining Mobility & Falls Risk",
+  
+  "patient": {
+    "name": "Margaret Wilson",
+    "age": 78,
+    "gender": "Female",
+    "avatar": "https://i.imgur.com/ccTT0vA.png",
+    "avatarFallback": "👵",
+    
+    "demographics": {
+      "livingSituation": "Lives alone",
+      "housingType": "Two-storey weatherboard home",
+      "address": "24 Willow Street",
+      "suburb": "Suburban single-family home, quiet residential area"
+    },
+    
+    "medicalHistory": {
+      "conditions": [
+        {
+          "name": "Type 2 Diabetes",
+          "diagnosed": "2015",
+          "status": "Diet controlled",
+          "details": "HbA1c 48 mmol/mol, regular podiatry review"
+        },
+        {
+          "name": "Hypertension",
+          "diagnosed": "2010",
+          "status": "Well controlled on Ramipril",
+          "details": "Home BP monitoring"
+        },
+        {
+          "name": "Osteoarthritis",
+          "location": "Knees and hips",
+          "severity": "Moderate",
+          "impact": "Affects mobility, regular paracetamol use"
+        },
+        {
+          "name": "Mild Cognitive Impairment",
+          "diagnosed": "2022",
+          "status": "6-monthly memory clinic review",
+          "details": "AMT score 8/10"
+        },
+        {
+          "name": "Previous TIA",
+          "timeframe": "2 years ago",
+          "presentation": "Right-sided weakness (resolved)",
+          "management": "On aspirin, annual stroke clinic review"
+        }
+      ],
+      "surgicalHistory": "Nil significant surgical history"
+    },
+    
+    "medications": [
+      {
+        "name": "Ramipril",
+        "dose": "5mg",
+        "frequency": "Once daily (morning)",
+        "indication": "Hypertension"
+      },
+      {
+        "name": "Aspirin",
+        "dose": "75mg",
+        "frequency": "Once daily (morning)",
+        "indication": "TIA prevention"
+      },
+      {
+        "name": "Paracetamol",
+        "dose": "500mg",
+        "frequency": "PRN (takes 1-2 tablets most days)",
+        "indication": "Arthritis pain"
+      },
+      {
+        "name": "Vitamin D",
+        "dose": "800IU",
+        "frequency": "Once daily",
+        "indication": "Bone health"
+      }
+    ],
+    
+    "medicationCompliance": {
+      "overall": "Generally good",
+      "issues": "Sometimes forgets afternoon doses",
+      "support": "Webster pack provided by pharmacy weekly"
+    },
+    
+    "allergies": [
+      {
+        "allergen": "Penicillin",
+        "reaction": "Widespread urticarial rash",
+        "documented": "1995",
+        "notes": "Tolerates cephalosporins"
+      }
+    ],
+    
+    "fallsHistory": {
+      "frequency": "3rd fall in 6 months",
+      "mostRecent": {
+        "timeframe": "3 days ago",
+        "location": "Bathroom",
+        "injury": "Minor bruising to right hip",
+        "response": "Self-mobilised to bed, rested overnight"
+      },
+      "previousIncident": {
+        "location": "Local community centre",
+        "timeframe": "6 months ago",
+        "psychologicalImpact": "Now feels too anxious to return"
+      }
+    },
+    
+    "functionalStatus": {
+      "mobility": {
+        "indoors": "Uses walking frame",
+        "outdoors": "Reluctant to go outside",
+        "stairs": "Difficulty managing stairs safely"
+      },
+      "adls": {
+        "personalCare": "Manages independently but takes longer",
+        "dressing": "Independent",
+        "housework": "Struggles with vacuuming, mopping due to balance issues and fatigue",
+        "shopping": "Daughter does weekly shopping",
+        "cooking": "States 'cooking is too much effort'",
+        "reaching": "Difficulty reaching high cupboards"
+      }
+    },
+    
+    "homeEnvironment": {
+      "structure": {
+        "levels": "Two-storey",
+        "bedrooms": "Upstairs",
+        "bathroom": "Upstairs",
+        "stairs": "Handrail on one side only"
+      },
+      "hazards": [
+        "Clutter in main living areas",
+        "Poor lighting in hallway and bathroom",
+        "Loose carpet edges in lounge room",
+        "Kitchen has limited bench space with items stored on floor"
+      ],
+      "exterior": {
+        "condition": "Front lawn showing overgrowth",
+        "maintenance": "Otherwise relatively well-maintained",
+        "access": "Pathway to front door is clear and accessible"
+      }
+    },
+    
+    "socialSituation": {
+      "family": [
+        {
+          "relationship": "Daughter",
+          "name": "Sarah",
+          "age": 52,
+          "contact": "Visits weekly",
+          "support": "Does shopping, brings prepared meals weekly",
+          "employment": "Works full-time"
+        },
+        {
+          "relationship": "Son",
+          "name": "Michael",
+          "age": 48,
+          "location": "Lives interstate",
+          "contact": "Monthly phone calls"
+        }
+      ],
+      "socialEngagement": {
+        "previous": "Attended local community centre",
+        "current": "Stopped attending 6 months ago after fall",
+        "status": "Appears socially isolated"
+      },
+      "formalSupport": "No formal care services currently"
+    },
+    
+    "nutritionalStatus": {
+      "appetite": "Not eating as much lately",
+      "barriers": "Cooking is too much effort",
+      "currentSupport": "Relies on daughter's weekly prepared meals"
+    },
+    
+    "cognitiveAssessment": {
+      "orientation": "Alert and oriented to person, place, and time",
+      "socialInteraction": "Appropriate",
+      "attention": "Good attention span during conversation",
+      "language": "Mild word-finding difficulties noted",
+      "memory": "Can recall recent events but some confusion about exact dates",
+      "insight": "Acknowledges memory difficulties: 'I do forget things sometimes'",
+      "capacity": "Safe for independent decision-making about health with support"
+    },
+    
+    "patientGoalsAndConcerns": {
+      "primaryGoal": "Stay in own home safely",
+      "concerns": [
+        "Strong desire to remain at home - 'This is my home of 40 years - I'm not ready to leave'",
+        "Worried about becoming a burden on daughter",
+        "Anxious about hospital admission after previous negative experience (felt rushed, not listened to)",
+        "Fears losing independence"
+      ],
+      "insight": "Acknowledges struggling but wants to try supports at home first"
+    },
+    
+    "presentingSituation": {
+      "excellent": "78yo female, 3rd fall in 6 months (most recent: 3 days ago). Lives alone in two-story home. Fell in bathroom, minor bruising to right hip. Self-mobilised to bed, rested overnight. Currently mobile with walking frame indoors. Family increasingly concerned about safety and ability to cope independently. Patient cooperative and willing to discuss concerns.",
+      "good": "78yo female, 3rd fall in 6 months. Lives alone, two-story home. Recent bathroom fall with minor bruising. Family concerned about safety and coping. Patient willing to discuss.",
+      "fair": "78yo female with recent falls. Lives alone. Family has concerns.",
+      "poor": "Limited information obtained - patient guarded during initial contact"
+    }
+  },
+  
+  "dispatch": {
+    "incidentType": "Welfare Check",
+    "location": "24 Willow Street",
+    "caller": "Patient's daughter (Sarah)",
+    "callReason": "Concerned about mother's declining mobility after recent fall",
+    "knownHistory": "Daughter states patient had fall 2 or 3 days ago. Patient currently at home alone, unable to be contacted. No immediate medical emergency identified.",
+    "time": "14:23 hours",
+    "dispatchNotes": [
+      "Daughter concerned about mother's declining mobility",
+      "Patient had fall 2 or 3 days ago",
+      "Patient currently at home alone, unable to be contacted",
+      "No immediate medical emergency identified"
+    ]
+  },
+  
+  "arrival": {
+    "sceneDescription": "You arrive at 24 Willow Street, a typical suburban single-family home in a quiet residential area. Two-storey weatherboard home with tiled roof. Front lawn showing some overgrowth but otherwise appears relatively well-maintained. Pathway to front door is clear and accessible. Lights visible inside, suggesting occupant is home.",
+    "initialObservations": [
+      "Two-storey weatherboard home with tiled roof",
+      "Front lawn showing some overgrowth",
+      "Otherwise appears relatively well-maintained",
+      "Pathway to front door is clear and accessible",
+      "Lights visible inside, suggesting occupant is home"
+    ],
+    "clinicalImpressions": "The property suggests someone living independently but potentially experiencing recent challenges with outdoor maintenance. The overgrown lawn may indicate declining physical capacity or recent health issues affecting routine household tasks.",
+    "safetyNote": "External maintenance issues can be an early indicator of declining functional capacity - consider this as part of your holistic assessment."
+  },
+  
+  "performanceMetrics": [
+    {
+      "id": "trust",
+      "label": "Patient Trust",
+      "initialValue": 30,
+      "color": "#4ade80",
+      "description": "Patient's confidence and trust in your professional abilities"
+    },
+    {
+      "id": "rapport",
+      "label": "Patient Rapport",
+      "initialValue": 30,
+      "color": "#4fc3f7",
+      "description": "Quality of therapeutic relationship and communication"
+    },
+    {
+      "id": "clinical",
+      "label": "Clinical Needs Identified",
+      "initialValue": 0,
+      "color": "#f87171",
+      "description": "Comprehensiveness of clinical assessment"
+    },
+    {
+      "id": "support",
+      "label": "Support Needs Identified",
+      "initialValue": 0,
+      "color": "#fbbf24",
+      "description": "Identification of social and community support needs"
+    },
+    {
+      "id": "risk",
+      "label": "Risk Assessment",
+      "initialValue": 20,
+      "color": "#a78bfa",
+      "description": "Quality and comprehensiveness of risk assessment"
+    }
+  ],
+  
+  "questionSets": [
+    {
+      "id": "intro_questions",
+      "title": "Initial Assessment Phase",
+      "summaryTitle": "Initial Contact & Assessment Approach",
+      "description": "Foundational questions establishing rapport and gathering baseline information",
+      "questions": [
+        {
+          "id": "intro_q1",
+          "category": "initial_contact",
+          "icon": "🤝",
+          "text": "You arrive at Margaret's home. What is your first action?",
+          "options": [
+            {
+              "text": "Introduce yourself professionally, explain your role and purpose of visit",
+              "points": 10,
+              "impact": {
+                "trust": 10,
+                "rapport": 8,
+                "clinical": 5,
+                "support": 6,
+                "risk": 8
+              },
+              "feedback": "✅ Excellent! Professional introduction with clear explanation of your role and purpose is essential for establishing trust and meeting ethical standards.",
+              "caseInfo": "<strong>Professional Introduction:</strong> You established excellent rapport by clearly introducing yourself, explaining your LARU role, and obtaining informed consent before proceeding."
+            },
+            {
+              "text": "Show ID badge and immediately begin asking medical history questions",
+              "points": 5,
+              "impact": {
+                "trust": 3,
+                "rapport": 2,
+                "clinical": 3,
+                "support": 2,
+                "risk": 3
+              },
+              "feedback": "📋 While showing ID is good, you need to properly introduce yourself, explain your role, and obtain consent before diving into questions.",
+              "caseInfo": "<strong>Introduction:</strong> You showed identification but proceeded quickly to questioning without fully establishing rapport."
+            },
+            {
+              "text": "Walk in and start examining the home environment for hazards",
+              "points": 2,
+              "impact": {
+                "trust": -20,
+                "rapport": -20,
+                "clinical": 1,
+                "support": 1,
+                "risk": -15
+              },
+              "feedback": "⚠️ This violates consent and privacy. You must introduce yourself, explain your purpose, and get permission before entering or assessing.",
+              "trigger": {
+                "type": "danger",
+                "title": "Critical Privacy Violation",
+                "message": "Margaret has become uncomfortable with your approach. Entering without proper introduction and consent is a serious breach of professional standards and patient autonomy."
+              }
+            },
+            {
+              "text": "Ask 'Are you Margaret?' and tell her the ambulance service sent you",
+              "points": 6,
+              "impact": {
+                "trust": 5,
+                "rapport": 4,
+                "clinical": 3,
+                "support": 3,
+                "risk": 4
+              },
+              "feedback": "👍 Clarifying identity is good, but you need a fuller professional introduction explaining your specific LARU role and getting informed consent.",
+              "caseInfo": "<strong>Initial Contact:</strong> You confirmed patient identity and mentioned ambulance service involvement."
+            }
+          ]
+        },
+        {
+          "id": "intro_q2",
+          "category": "environment",
+          "icon": "🏠",
+          "text": "As you enter the home, you notice clutter, poor lighting, and loose carpet edges. What do you do?",
+          "options": [
+            {
+              "text": "Mental note of hazards for later discussion, focus first on building rapport with Margaret before addressing environmental concerns",
+              "points": 10,
+              "impact": {
+                "trust": 6,
+                "rapport": 5,
+                "clinical": 4,
+                "support": 8,
+                "risk": 12
+              },
+              "feedback": "✅ Perfect approach! You're balancing safety awareness with patient-centered care. Build the relationship first, then address concerns collaboratively.",
+              "caseInfo": "<strong>Environmental Assessment:</strong> You noted multiple fall hazards including clutter, poor lighting, and loose carpet edges. Appropriately prioritized rapport-building before addressing concerns."
+            },
+            {
+              "text": "Immediately point out all the hazards and tell her these must be fixed urgently",
+              "points": 3,
+              "impact": {
+                "trust": -8,
+                "rapport": -10,
+                "clinical": 2,
+                "support": 3,
+                "risk": 5
+              },
+              "feedback": "⚠️ This approach can make patients defensive and damage rapport. Note hazards but address them sensitively once you've built trust.",
+              "trigger": {
+                "type": "warning",
+                "title": "Rapport at Risk",
+                "message": "Margaret appears defensive about your criticism of her home. Building trust first would allow for more collaborative problem-solving."
+              },
+              "caseInfo": "<strong>Environmental Concerns:</strong> You identified home hazards but Margaret became defensive about your direct approach."
+            },
+            {
+              "text": "Start moving furniture and rugs to make the space safer",
+              "points": 1,
+              "impact": {
+                "trust": -25,
+                "rapport": -25,
+                "clinical": 1,
+                "support": 1,
+                "risk": -20
+              },
+              "feedback": "⚠️ Never rearrange someone's home without permission. This violates autonomy and could cause distress. Discuss concerns respectfully first.",
+              "trigger": {
+                "type": "danger",
+                "title": "Autonomy Violation",
+                "message": "Margaret has asked you to stop and is visibly upset. Rearranging her belongings without permission is a serious breach of patient autonomy and dignity."
+              }
+            },
+            {
+              "text": "Take photos of hazards to show her family later",
+              "points": 4,
+              "impact": {
+                "trust": -5,
+                "rapport": -5,
+                "clinical": 2,
+                "support": 2,
+                "risk": 3
+              },
+              "feedback": "⚠️ Taking photos without explicit consent violates privacy. Any documentation must be discussed and agreed with Margaret first.",
+              "caseInfo": "<strong>Documentation Approach:</strong> You attempted to document environmental hazards but did not obtain proper consent."
+            }
+          ]
+        },
+        {
+          "id": "intro_q3",
+          "category": "rapport",
+          "icon": "💬",
+          "text": "Margaret seems anxious and says 'I don't want to go to hospital. Last time was awful.' How do you respond?",
+          "options": [
+            {
+              "text": "Acknowledge her feelings, reassure her that your goal is to help her stay home safely, and explain that you'll work together to find the best solution for her",
+              "points": 10,
+              "impact": {
+                "trust": 12,
+                "rapport": 14,
+                "clinical": 3,
+                "support": 10,
+                "risk": 5
+              },
+              "feedback": "🌟 Excellent therapeutic communication! You validated her concerns, aligned with her goals, and emphasized collaboration - perfect for building trust.",
+              "caseInfo": "<strong>Patient-Centered Approach:</strong> Margaret expressed strong preference to avoid hospital due to previous negative experience. You validated her concerns and aligned with her goal of staying home safely."
+            },
+            {
+              "text": "Tell her not to worry, you're just here to do an assessment",
+              "points": 3,
+              "impact": {
+                "trust": 2,
+                "rapport": 1,
+                "clinical": 2,
+                "support": 2,
+                "risk": 2
+              },
+              "feedback": "💡 This dismisses her concerns. Better to acknowledge her feelings and fears explicitly before explaining your role.",
+              "caseInfo": "<strong>Hospital Concerns:</strong> Margaret mentioned anxiety about hospital but concerns were not fully explored."
+            },
+            {
+              "text": "Explain that hospital may be necessary for her safety and you'll need to assess her",
+              "points": 4,
+              "impact": {
+                "trust": -5,
+                "rapport": -8,
+                "clinical": 2,
+                "support": 2,
+                "risk": 3
+              },
+              "feedback": "⚠️ This immediately triggers her fear and undermines trust. Lead with understanding and partnership, not potential outcomes she's already afraid of.",
+              "trigger": {
+                "type": "warning",
+                "title": "Patient Becoming Guarded",
+                "message": "Margaret is withdrawing and appears less willing to engage. She's mentioned hospital concerns but you haven't addressed her underlying fears."
+              },
+              "caseInfo": "<strong>Communication Breakdown:</strong> Margaret expressed fear of hospital but became more guarded when this was raised as a possibility."
+            },
+            {
+              "text": "Say 'That's fine, we won't send you to hospital' without conducting a proper assessment",
+              "points": 2,
+              "impact": {
+                "trust": -10,
+                "rapport": 3,
+                "clinical": -5,
+                "support": -5,
+                "risk": -10
+              },
+              "feedback": "⚠️ You cannot make promises before assessing her situation. This is clinically unsafe and professionally inappropriate.",
+              "trigger": {
+                "type": "warning",
+                "title": "Professional Credibility Compromised",
+                "message": "You made a promise about care outcomes before completing any assessment. This undermines your professional credibility and creates unrealistic expectations."
+              },
+              "caseInfo": "<strong>Premature Promise:</strong> You assured Margaret she wouldn't need hospital before conducting proper assessment, which may have created false expectations."
+            }
+          ]
+        },
+        {
+          "id": "intro_q4",
+          "category": "history",
+          "icon": "📋",
+          "text": "You need to gather Margaret's medical history. What's your approach?",
+          "options": [
+            {
+              "text": "Use open-ended questions, allow her to tell her story, then clarify specific details, while observing her cognitive and communication abilities",
+              "points": 10,
+              "impact": {
+                "trust": 7,
+                "rapport": 6,
+                "clinical": 12,
+                "support": 5,
+                "risk": 7
+              },
+              "feedback": "🌟 Exemplary assessment technique! Patient-centered questioning reveals not just facts but also cognitive function, communication skills, and health literacy.",
+              "caseInfo": "<strong>Comprehensive Medical History:</strong> Type 2 Diabetes (2015, diet controlled, HbA1c 48), Hypertension (2010, well controlled on Ramipril), Osteoarthritis (knees/hips, moderate, affecting mobility), Mild Cognitive Impairment (2022, 6-monthly reviews, AMT 8/10), Previous TIA (2yr ago, on aspirin). Current medications: Ramipril 5mg OD, Aspirin 75mg OD, Paracetamol PRN, Vitamin D 800IU OD. Penicillin allergy (rash). Cognitive assessment shows good orientation with mild word-finding difficulties and some date confusion. Maintains decision-making capacity."
+            },
+            {
+              "text": "Work through a checklist of closed questions to gather information efficiently",
+              "points": 6,
+              "impact": {
+                "trust": 4,
+                "rapport": 3,
+                "clinical": 8,
+                "support": 3,
+                "risk": 4
+              },
+              "feedback": "📋 While structured questions have a place, starting with open-ended inquiry gives richer information and better rapport. Balance both approaches.",
+              "caseInfo": "<strong>Medical History:</strong> Diabetes, hypertension, arthritis, memory issues, previous TIA documented. Takes multiple medications including Ramipril, Aspirin, Paracetamol. Penicillin allergy noted."
+            },
+            {
+              "text": "Ask her daughter to provide the medical history as she'll be more accurate",
+              "points": 4,
+              "impact": {
+                "trust": -3,
+                "rapport": -4,
+                "clinical": 5,
+                "support": 3,
+                "risk": 2
+              },
+              "feedback": "⚠️ Always start with the patient unless they lack capacity. This undermines autonomy and you miss assessing her cognitive abilities.",
+              "caseInfo": "<strong>Medical Information:</strong> History obtained primarily from daughter rather than patient. Limited assessment of patient's cognitive function and insight."
+            },
+            {
+              "text": "Just check her medication list and move on",
+              "points": 2,
+              "impact": {
+                "trust": -5,
+                "rapport": -5,
+                "clinical": 3,
+                "support": -3,
+                "risk": -5
+              },
+              "feedback": "⚠️ Medication lists alone are insufficient. You need comprehensive history-taking to understand conditions, functional impacts, and treatment effectiveness.",
+              "trigger": {
+                "type": "warning",
+                "title": "Inadequate Assessment",
+                "message": "Your superficial assessment approach is missing critical clinical context. Medications alone don't reveal disease progression, symptom control, or how conditions affect Margaret's daily life."
+              },
+              "caseInfo": "<strong>Limited History:</strong> Medication list reviewed but comprehensive medical history not obtained. Missing functional impact assessment and patient's understanding of conditions."
+            }
+          ]
+        },
+        {
+          "id": "intro_q5",
+          "category": "cognitive_screen",
+          "icon": "🧠",
+          "text": "During conversation, you want to assess Margaret's cognitive function. What's the best approach?",
+          "options": [
+            {
+              "text": "Observe orientation, attention, and memory naturally during conversation, then conduct formal screening (e.g., AMT, MOCA) if concerns arise",
+              "points": 10,
+              "impact": {
+                "trust": 5,
+                "rapport": 5,
+                "clinical": 10,
+                "support": 15,
+                "risk": 25
+              },
+              "feedback": "✅ Perfect assessment strategy! Natural observation is less threatening and provides context. Formal tools follow if clinically indicated.",
+              "caseInfo": "<strong>Cognitive Function:</strong> Comprehensive cognitive assessment completed. Margaret is alert and oriented to person, place, and time with appropriate social interaction. Mild word-finding difficulties and some date confusion noted. Good insight into memory difficulties. Maintains capacity for independent decision-making with support."
+            },
+            {
+              "text": "Immediately administer formal cognitive testing to get baseline scores",
+              "points": 5,
+              "impact": {
+                "trust": 2,
+                "rapport": 1,
+                "clinical": 6,
+                "support": 8,
+                "risk": 12
+              },
+              "feedback": "📋 Too abrupt - this can feel confronting. Build rapport first and observe natural cognitive function during conversation before formal testing.",
+              "caseInfo": "<strong>Cognitive Assessment:</strong> Formal testing conducted. Some cognitive concerns noted but assessment may have impacted rapport due to abrupt approach."
+            },
+            {
+              "text": "Ask her daughter about any cognitive changes rather than testing Margaret",
+              "points": 4,
+              "impact": {
+                "trust": 1,
+                "rapport": 0,
+                "clinical": 4,
+                "support": 5,
+                "risk": 5
+              },
+              "feedback": "💡 Collateral history is valuable but doesn't replace direct assessment. You must observe and test Margaret yourself to form clinical judgment.",
+              "caseInfo": "<strong>Cognitive Status:</strong> Collateral history obtained from daughter regarding memory concerns. Direct cognitive assessment of patient limited."
+            },
+            {
+              "text": "She seems fine to me - no need for formal cognitive assessment",
+              "points": 3,
+              "impact": {
+                "trust": 2,
+                "rapport": 2,
+                "clinical": 1,
+                "support": 3,
+                "risk": -5
+              },
+              "feedback": "⚠️ Never assume cognitive function is intact without proper assessment. This affects safety, medication management, and decision-making capacity.",
+              "caseInfo": "<strong>Cognitive Function:</strong> No formal cognitive assessment completed. Patient appeared appropriate during interaction but detailed evaluation not performed."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "main_assessment",
+      "title": "Comprehensive LARU Assessment",
+      "summaryTitle": "Clinical & Social Assessment Findings",
+      "description": "Core assessment covering clinical, functional, cognitive, social, and environmental factors",
+      "questions": [
+        {
+          "id": "main_q1",
+          "category": "initial",
+          "icon": "🎯",
+          "text": "What should be your primary approach for this complex case?",
+          "options": [
+            {
+              "text": "Integrated Multi-Disciplinary Assessment - coordinate simultaneous assessment of clinical, functional, cognitive, social, and environmental factors with patient-centred decision-making",
+              "points": 10,
+              "impact": {
+                "trust": 8,
+                "rapport": 6,
+                "clinical": 12,
+                "support": 8,
+                "risk": 7
+              },
+              "feedback": "🌟 Excellent! Integrated MDT assessment is best practice for complex cases. This approach avoids fragmented care, identifies interdependencies, and enables holistic planning with the patient as an active partner.",
+              "caseInfo": "<strong>Assessment Approach:</strong> You adopted an integrated multi-disciplinary approach, recognizing the complex interplay between Margaret's clinical, functional, cognitive, social, and environmental needs."
+            },
+            {
+              "text": "Comprehensive Falls Assessment - detailed falls risk assessment including home environment, mobility aids, and medication review",
+              "points": 7,
+              "impact": {
+                "trust": 5,
+                "rapport": 4,
+                "clinical": 10,
+                "support": 5,
+                "risk": 6
+              },
+              "feedback": "✅ Good focus on falls risk, but consider that falls are multifactorial. An integrated approach would simultaneously assess all contributing factors for more effective intervention.",
+              "caseInfo": "<strong>Falls Focus:</strong> You conducted a comprehensive falls assessment addressing environmental hazards, mobility, and medication factors."
+            },
+            {
+              "text": "Urgent Hospital Referral - immediate ED referral for full medical workup given multiple falls",
+              "points": 3,
+              "impact": {
+                "trust": -8,
+                "rapport": -10,
+                "clinical": 4,
+                "support": 2,
+                "risk": 3
+              },
+              "feedback": "⚠️ LARU exists to prevent unnecessary admissions. Patient is medically stable. Hospital admission carries risks and may not address underlying issues. Comprehensive community assessment is needed.",
+              "trigger": {
+                "type": "warning",
+                "title": "Inappropriate Hospital Referral",
+                "message": "Margaret is distressed by the suggestion of hospital admission. She specifically mentioned her fear of hospital and desire to stay home. LARU's role is to facilitate safe community-based care."
+              },
+              "caseInfo": "<strong>Disposition:</strong> Immediate hospital referral recommended despite patient being clinically stable and expressing strong preference to avoid admission."
+            },
+            {
+              "text": "Social Care First - prioritise arranging care package and home modifications",
+              "points": 5,
+              "impact": {
+                "trust": 4,
+                "rapport": 4,
+                "clinical": 3,
+                "support": 10,
+                "risk": 4
+              },
+              "feedback": "💡 Social care is important but this overlooks clinical complexity (falls, diabetes, cognitive impairment, TIA). Clinical and social factors must be assessed together for effective care planning.",
+              "caseInfo": "<strong>Social Care Focus:</strong> You prioritized social care interventions and home modifications but clinical assessment remained incomplete."
+            }
+          ]
+        },
+        {
+  "id": "main_q2",
+  "category": "falls",
+  "icon": "🚶‍♀️",
+  "text": "During falls assessment, Margaret mentions feeling dizzy when standing. What is your priority action?",
+  "options": [
+    {
+      "text": "Assess postural blood pressure, review medication timing, check for orthostatic hypotension, and evaluate vision - integrate findings with environmental assessment",
+      "points": 10,
+      "impact": {
+        "trust": 4,
+        "rapport": 3,
+        "clinical": 15,
+        "support": 5,
+        "risk": 9
+      },
+      "feedback": "🌟 Perfect approach! Dizziness on standing requires comprehensive assessment of cardiovascular, medication, and sensory factors. You identified key clinical risks while maintaining holistic perspective.",
+      "caseInfo": "<strong>Falls Risk Factors:</strong> Margaret reports dizziness on standing. Postural BP assessment conducted showing orthostatic drop. Ramipril timing reviewed. Vision assessment completed. Multiple fall risk factors identified requiring coordinated intervention."
+    },
+    {
+      "text": "Recommend stopping Ramipril immediately as it may cause hypotension",
+      "points": 2,
+      "impact": {
+        "trust": -8,
+        "rapport": -5,
+        "clinical": 2,
+        "support": 1,
+        "risk": -10
+      },
+      "feedback": "⚠️ Never recommend stopping essential medications without medical review. Ramipril controls hypertension after TIA. Requires GP consultation and proper BP monitoring before any changes.",
+      "trigger": {
+        "type": "danger",
+        "title": "Unsafe Medication Advice",
+        "message": "Recommending cessation of essential cardiac medication without medical consultation is dangerous. Margaret's TIA history makes antihypertensive therapy critical. Your advice has undermined her confidence in your clinical judgment."
+      },
+      "caseInfo": "<strong>Medication Management:</strong> You recommended stopping Ramipril without appropriate medical consultation or consideration of cardiovascular history."
+    },
+    {
+      "text": "Focus on environmental modifications - grab rails and removing trip hazards",
+      "points": 6,
+      "impact": {
+        "trust": 3,
+        "rapport": 3,
+        "clinical": 4,
+        "support": 8,
+        "risk": 6
+      },
+      "feedback": "👍 Environmental factors are important but dizziness on standing suggests clinical cause (orthostatic hypotension, medication effects). Must address both clinical and environmental factors together.",
+      "caseInfo": "<strong>Environmental Focus:</strong> You addressed home hazards including need for grab rails and trip hazard removal, but did not fully investigate the clinical cause of dizziness."
+    },
+    {
+      "text": "Document symptom and continue with general falls assessment",
+      "points": 4,
+      "impact": {
+        "trust": 1,
+        "rapport": 1,
+        "clinical": 3,
+        "support": 2,
+        "risk": -5
+      },
+      "feedback": "💡 Dizziness on standing is a significant risk factor requiring immediate clinical assessment. This could indicate serious issues like orthostatic hypotension that need prompt evaluation.",
+      "caseInfo": "<strong>Symptom Documentation:</strong> Dizziness on standing noted but not fully assessed. Potential serious clinical cause not investigated."
+    }
+  ]
+},
+{
+  "id": "main_q3",
+  "category": "cognitive",
+  "icon": "🧠",
+  "text": "Margaret's daughter mentions her mother has been more forgetful recently, sometimes forgetting to take medications. How do you address this?",
+  "options": [
+    {
+      "text": "Conduct cognitive screening, assess medication management capacity with patient and family, explore medication aids (dosette box), consider pharmacy support, and plan regular monitoring",
+      "points": 10,
+      "impact": {
+        "trust": 7,
+        "rapport": 8,
+        "clinical": 8,
+        "support": 10,
+        "risk": 4
+      },
+      "feedback": "✅ Excellent patient-centred approach! You balanced cognitive assessment with practical support solutions, involved the family appropriately, and planned for ongoing monitoring while respecting autonomy.",
+      "caseInfo": "<strong>Cognitive & Medication Safety:</strong> Forgetfulness affecting medication compliance identified. Cognitive screening completed, medication management capacity assessed with patient and family. Webster pack already in use. Pharmacy support engaged for monitoring. Family educated on signs of deterioration."
+    },
+    {
+      "text": "Arrange for daughter to take over all medication management",
+      "points": 4,
+      "impact": {
+        "trust": -3,
+        "rapport": -2,
+        "clinical": 3,
+        "support": 5,
+        "risk": 2
+      },
+      "feedback": "⚠️ Too quick to remove independence. First assess Margaret's capacity and explore supportive solutions (dosette boxes, pharmacy services) that maintain her autonomy while ensuring safety.",
+      "caseInfo": "<strong>Medication Management:</strong> You transferred all medication responsibility to daughter without exploring supportive aids that could maintain patient independence."
+    },
+    {
+      "text": "Urgent referral to memory clinic for dementia assessment",
+      "points": 5,
+      "impact": {
+        "trust": 3,
+        "rapport": 2,
+        "clinical": 6,
+        "support": 4,
+        "risk": 3
+      },
+      "feedback": "⚠️ While cognitive changes warrant attention, this is already being monitored (6-month review mentioned). Focus on immediate medication safety with appropriate aids and GP follow-up.",
+      "caseInfo": "<strong>Cognitive Referral:</strong> Urgent memory clinic referral made despite existing 6-monthly reviews. Immediate medication safety concerns not addressed."
+    },
+    {
+      "text": "Set up medication reminder app on her phone",
+      "points": 6,
+      "impact": {
+        "trust": 4,
+        "rapport": 3,
+        "clinical": 5,
+        "support": 8,
+        "risk": 3
+      },
+      "feedback": "👍 Technology can help, but first assess if Margaret can use smartphone apps reliably. Consider her cognitive capacity, technology literacy, and may need more robust solutions like dosette boxes.",
+      "caseInfo": "<strong>Technology Solution:</strong> Medication reminder app suggested but patient's technology literacy and cognitive capacity for app use not fully assessed."
+    }
+  ]
+},
+{
+  "id": "main_q4",
+  "category": "medication",
+  "icon": "💊",
+  "text": "You notice Margaret takes Paracetamol 'most days' for arthritis pain. She also mentions the pain stops her exercising. What's your best approach?",
+  "options": [
+    {
+      "text": "Comprehensive pain management review: assess pain impact on function and falls risk, involve GP for medication optimisation, refer to physiotherapy for exercise program, and integrate with overall mobility plan",
+      "points": 10,
+      "impact": {
+        "trust": 5,
+        "rapport": 4,
+        "clinical": 10,
+        "support": 8,
+        "risk": 6
+      },
+      "feedback": "🌟 Outstanding! You recognised pain as a key factor in her declining mobility and falls risk. Your integrated approach addresses medication, therapy, and functional impact together - true LARU practice.",
+      "caseInfo": "<strong>Pain Management:</strong> Chronic arthritis pain identified as significant barrier to exercise and mobility. Comprehensive approach coordinated including GP review for medication optimisation, physiotherapy referral for supervised exercise program, and integration with falls prevention strategy."
+    },
+    {
+      "text": "Suggest increasing Paracetamol to maximum dose (1g QDS)",
+      "points": 5,
+      "impact": {
+        "trust": 2,
+        "rapport": 2,
+        "clinical": 4,
+        "support": 3,
+        "risk": 3
+      },
+      "feedback": "💊 While pain control is important, you cannot prescribe or adjust medications. Need GP involvement for proper review. Also missed opportunity to address underlying mobility issues through physiotherapy.",
+      "caseInfo": "<strong>Pain Management:</strong> You suggested medication dose increase without appropriate medical consultation or addressing underlying functional limitations."
+    },
+    {
+      "text": "Advise to 'push through the pain' and exercise anyway to maintain mobility",
+      "points": 2,
+      "impact": {
+        "trust": -10,
+        "rapport": -8,
+        "clinical": 1,
+        "support": 1,
+        "risk": -5
+      },
+      "feedback": "⚠️ Never advise exercising through pain - could worsen arthritis and cause injury. Pain needs proper medical management and supervised physiotherapy for safe, appropriate exercise.",
+      "trigger": {
+        "type": "warning",
+        "title": "Unsafe Advice Given",
+        "message": "Margaret is concerned about your advice to 'push through the pain.' This could lead to injury or worsening of her arthritis. Appropriate pain management and supervised rehabilitation are essential."
+      },
+      "caseInfo": "<strong>Exercise Advice:</strong> You advised patient to exercise through pain without appropriate pain management or physiotherapy support."
+    },
+    {
+      "text": "Document pain issue and note for GP to review at next appointment",
+      "points": 6,
+      "impact": {
+        "trust": 3,
+        "rapport": 2,
+        "clinical": 5,
+        "support": 4,
+        "risk": 4
+      },
+      "feedback": "📋 Too passive for LARU role. Pain is directly impacting her mobility and falls risk NOW. Actively coordinate urgent GP review and physiotherapy referral as part of your integrated assessment.",
+      "caseInfo": "<strong>Pain Documentation:</strong> Pain issue documented for future GP review but no active coordination of care to address immediate impact on function and falls risk."
+    }
+  ]
+},
+{
+  "id": "main_q5",
+  "category": "home",
+  "icon": "🏠",
+  "text": "Margaret lives in a two-storey home with bedroom and bathroom upstairs. She reports difficulty managing stairs safely. What's your priority recommendation?",
+  "options": [
+    {
+      "text": "Urgent OT home assessment to evaluate: stair safety (rails, lighting), feasibility of downstairs bedroom conversion, bathroom adaptations, and patient preferences for remaining at home long-term",
+      "points": 10,
+      "impact": {
+        "trust": 6,
+        "rapport": 5,
+        "clinical": 6,
+        "support": 12,
+        "risk": 10
+      },
+      "feedback": "🌟 Perfect! You recognised this as urgent safety issue requiring expert OT assessment. Your approach considers practical solutions while respecting Margaret's wishes about her home - excellent LARU coordination.",
+      "caseInfo": "<strong>Home Safety Assessment:</strong> Urgent OT referral made for comprehensive home assessment. Stair safety concerns identified as immediate priority. Assessment will evaluate options including stair modifications, downstairs bedroom conversion, and bathroom adaptations based on patient preference."
+    },
+    {
+      "text": "Recommend she considers moving to single-storey accommodation or residential care",
+      "points": 3,
+      "impact": {
+        "trust": -8,
+        "rapport": -10,
+        "clinical": 2,
+        "support": 3,
+        "risk": 2
+      },
+      "feedback": "⚠️ Too quick to suggest major life changes. Many adaptations can make two-storey homes safe (stair rails, downstairs facilities). OT assessment needed before discussing such significant decisions.",
+      "trigger": {
+        "type": "warning",
+        "title": "Patient Distressed",
+        "message": "Margaret is upset by the suggestion of leaving her home of 40 years. She explicitly stated wanting to stay home. Your role is to explore ALL options to facilitate this safely, not jump to residential care."
+      },
+      "caseInfo": "<strong>Accommodation Discussion:</strong> You suggested moving to residential care, which distressed Margaret who has strong attachment to her home of 40 years."
+    },
+    {
+      "text": "Suggest she moves bedroom downstairs and uses commode at night",
+      "points": 6,
+      "impact": {
+        "trust": 4,
+        "rapport": 3,
+        "clinical": 4,
+        "support": 8,
+        "risk": 6
+      },
+      "feedback": "💡 Good thinking on practical solutions, but OT assessment is essential for proper planning. They can evaluate best options, ensure safety, arrange equipment, and consider all implications with Margaret.",
+      "caseInfo": "<strong>Home Modifications:</strong> You suggested downstairs bedroom and commode use but without formal OT assessment to evaluate feasibility and safety."
+    },
+    {
+      "text": "Advise family to supervise all stair use until further notice",
+      "points": 4,
+      "impact": {
+        "trust": 2,
+        "rapport": 2,
+        "clinical": 3,
+        "support": 4,
+        "risk": 3
+      },
+      "feedback": "💡 Family cannot provide 24/7 supervision - unrealistic and unsustainable. Need proper environmental solutions through OT assessment to enable safe, independent stair use or alternatives.",
+      "caseInfo": "<strong>Family Responsibility:</strong> You asked family to supervise all stair use, placing unrealistic burden on daughter who works full-time."
+    }
+  ]
+},
+{
+  "id": "main_q6",
+  "category": "social",
+  "icon": "👥",
+  "text": "Margaret stopped attending her community centre 6 months ago and seems isolated. Her daughter visits weekly but works full-time. How do you address this?",
+  "options": [
+    {
+      "text": "Comprehensive social support plan: explore why she stopped attending (transport? confidence?), connect with community services, assess need for reablement or care support, discuss social prescribing options with patient and family",
+      "points": 10,
+      "impact": {
+        "trust": 9,
+        "rapport": 10,
+        "clinical": 5,
+        "support": 15,
+        "risk": 3
+      },
+      "feedback": "🌟 Outstanding social assessment! You recognised social isolation as both a risk factor and outcome of her declining health. Your patient-centred approach explores barriers and solutions while respecting her autonomy.",
+      "caseInfo": "<strong>Social Isolation:</strong> Margaret stopped attending community centre 6 months ago after a fall and now feels too anxious to return. Comprehensive social support plan developed including: exploration of transport and confidence barriers, connection with community services and befriending schemes, reablement assessment, and social prescribing options discussed with patient and family."
+    },
+    {
+      "text": "Suggest daughter reduces work hours to spend more time with mother",
+      "points": 2,
+      "impact": {
+        "trust": -5,
+        "rapport": -3,
+        "clinical": 1,
+        "support": 2,
+        "risk": 1
+      },
+      "feedback": "⚠️ Never suggest family members change employment. Your role is to coordinate professional and community support services, not place unsustainable burden on family caregivers.",
+      "trigger": {
+        "type": "warning",
+        "title": "Inappropriate Family Burden",
+        "message": "Sarah (daughter) is concerned about your suggestion. She's already providing weekly support while working full-time. LARU should coordinate professional services, not increase family caregiver burden."
+      },
+      "caseInfo": "<strong>Family Support:</strong> You suggested daughter reduce work hours, which is inappropriate and places unsustainable burden on family caregiver."
+    },
+    {
+      "text": "Arrange volunteer driver to take her to community centre",
+      "points": 6,
+      "impact": {
+        "trust": 5,
+        "rapport": 5,
+        "clinical": 2,
+        "support": 10,
+        "risk": 2
+      },
+      "feedback": "📋 Transport may help but first understand why she stopped going. May lack confidence after falls, need walking aid support, or face other barriers. Address underlying issues for sustainable solution.",
+      "caseInfo": "<strong>Transport Support:</strong> Volunteer driver arranged but underlying reasons for stopping attendance not fully explored (anxiety after previous fall at centre)."
+    },
+    {
+      "text": "Provide information leaflet about local services for her to read",
+      "points": 4,
+      "impact": {
+        "trust": 2,
+        "rapport": 2,
+        "clinical": 1,
+        "support": 5,
+        "risk": 1
+      },
+      "feedback": "💡 Too passive. LARU role involves active coordination and facilitation. Work with her to identify barriers, preferences, and connect her directly with appropriate services with warm handovers.",
+      "caseInfo": "<strong>Service Information:</strong> Information leaflet provided but no active coordination or warm handover to services. Patient left to navigate complex system alone."
+    }
+  ]
+},
+{
+  "id": "main_q7",
+  "category": "functional",
+  "icon": "🎯",
+  "text": "Margaret manages personal care but struggles with housework. Her daughter does weekly shopping. What's your assessment priority?",
+  "options": [
+    {
+      "text": "Detailed ADL/IADL assessment to determine: specific task difficulties, underlying causes (pain, balance, fatigue), reablement potential, appropriate support level needed, and patient goals for independence",
+      "points": 10,
+      "impact": {
+        "trust": 5,
+        "rapport": 6,
+        "clinical": 8,
+        "support": 14,
+        "risk": 5
+      },
+      "feedback": "🌟 Perfect functional assessment! You recognised need for detailed understanding of her capabilities and limitations. This approach identifies reablement opportunities and ensures support is proportionate and goal-focused.",
+      "caseInfo": "<strong>Functional Assessment:</strong> Comprehensive ADL/IADL assessment completed. Margaret manages personal hygiene and dressing independently but takes longer. Struggles with housework (vacuuming, mopping) due to balance issues and fatigue. Difficulty reaching high cupboards. Reablement potential identified for some instrumental ADLs with appropriate equipment and therapy support."
+    },
+    {
+      "text": "Arrange domestic cleaning service twice weekly",
+      "points": 5,
+      "impact": {
+        "trust": 3,
+        "rapport": 3,
+        "clinical": 2,
+        "support": 8,
+        "risk": 3
+      },
+      "feedback": "📋 May be appropriate eventually, but first assess her capabilities fully. She may benefit from reablement to regain skills, or need different support. Proper assessment ensures right level and type of care.",
+      "caseInfo": "<strong>Domestic Support:</strong> Domestic cleaning service arranged but detailed functional assessment not completed to determine reablement potential."
+    },
+    {
+      "text": "Refer to physiotherapy for strength and balance exercises",
+      "points": 7,
+      "impact": {
+        "trust": 4,
+        "rapport": 4,
+        "clinical": 7,
+        "support": 9,
+        "risk": 4
+      },
+      "feedback": "👍 Physiotherapy is valuable, but need full functional assessment first to understand all her difficulties. May need OT for adaptive strategies and equipment alongside physio for strengthening.",
+      "caseInfo": "<strong>Physiotherapy Referral:</strong> Physio referral made for strength and balance but comprehensive functional assessment incomplete. May need additional OT input."
+    },
+    {
+      "text": "Recommend residential care as she cannot maintain home independently",
+      "points": 1,
+      "impact": {
+        "trust": -20,
+        "rapport": -20,
+        "clinical": 1,
+        "support": 1,
+        "risk": -10
+      },
+      "feedback": "⚠️ Completely inappropriate. She manages personal care and has family support. Many people receive support at home for housework. Must explore all community options before considering residential care.",
+      "trigger": {
+        "type": "danger",
+        "title": "Assessment Terminated",
+        "message": "Margaret has asked you to leave. Suggesting residential care when she manages personal ADLs and explicitly wants to stay home is a fundamental failure to understand LARU principles and patient-centred care."
+      }
+    }
+  ]
+},
+{
+  "id": "main_q8",
+  "category": "nutrition",
+  "icon": "🍎",
+  "text": "Margaret mentions she's not eating as much lately 'because cooking is too much effort.' Her daughter brings prepared meals weekly. How do you respond?",
+  "options": [
+    {
+      "text": "Screen for malnutrition risk (MUST tool), assess barriers to eating (shopping, cooking, appetite), explore solutions (meals on wheels, frozen meal delivery, microwave meals), involve dietitian if needed, and check diabetic control",
+      "points": 10,
+      "impact": {
+        "trust": 6,
+        "rapport": 5,
+        "clinical": 10,
+        "support": 12,
+        "risk": 6
+      },
+      "feedback": "🌟 Excellent nutrition assessment! You identified this as multi-factorial issue requiring comprehensive response. Your approach balances practical support with clinical monitoring - especially important given her diabetes.",
+      "caseInfo": "<strong>Nutritional Assessment:</strong> Malnutrition risk screening completed. Barriers identified: cooking difficulty due to fatigue, balance issues, and pain. Solutions coordinated including meals on wheels referral, frozen meal delivery options explored, microwave-safe meal planning. Dietitian consultation arranged. HbA1c monitoring planned to ensure diabetic control maintained."
+    },
+    {
+      "text": "Arrange for daughter to shop and cook more frequently",
+      "points": 3,
+      "impact": {
+        "trust": -3,
+        "rapport": -2,
+        "clinical": 2,
+        "support": 3,
+        "risk": 2
+      },
+      "feedback": "⚠️ Cannot rely on family to increase support - daughter already helps and works full-time. Need professional/community services that are reliable and sustainable. Coordinate meals on wheels or similar.",
+      "caseInfo": "<strong>Family Burden:</strong> You asked daughter to increase meal preparation despite her already providing weekly support while working full-time."
+    },
+    {
+      "text": "Give her information about local meal delivery services",
+      "points": 5,
+      "impact": {
+        "trust": 3,
+        "rapport": 2,
+        "clinical": 3,
+        "support": 7,
+        "risk": 3
+      },
+      "feedback": "📋 Information alone is insufficient. LARU role involves active coordination. Help her arrange services, check affordability, ensure meals suit diabetes, and monitor nutritional intake affects her health.",
+      "caseInfo": "<strong>Service Information:</strong> Information about meal delivery provided but no active coordination or follow-up to ensure services accessed."
+    },
+    {
+      "text": "Suggest nutritional supplement drinks to boost calorie intake",
+      "points": 6,
+      "impact": {
+        "trust": 4,
+        "rapport": 3,
+        "clinical": 6,
+        "support": 5,
+        "risk": 4
+      },
+      "feedback": "💡 Supplements may help but address root cause first. She can eat - just finds cooking difficult. Focus on practical meal solutions. Only consider supplements after proper nutritional assessment if intake remains poor.",
+      "caseInfo": "<strong>Supplementation Suggested:</strong> Nutritional supplements recommended but underlying barriers to meal preparation not addressed."
+    }
+  ]
+},
+{
+  "id": "main_q9",
+  "category": "mdt",
+  "icon": "👥",
+  "text": "You've identified multiple needs requiring input from GP, OT, physiotherapy, social care, and community services. How do you coordinate this effectively?",
+  "options": [
+    {
+      "text": "Convene MDT case conference (virtual if needed) with patient and family present, ensure shared care plan with clear actions/timelines/responsibilities, establish lead coordinator, and arrange follow-up review",
+      "points": 10,
+      "impact": {
+        "trust": 8,
+        "rapport": 7,
+        "clinical": 12,
+        "support": 10,
+        "risk": 7
+      },
+      "feedback": "🌟 Exemplary MDT coordination! You demonstrated true LARU leadership - bringing all stakeholders together including patient/family, ensuring clear communication, shared planning, and accountability. This is best practice care coordination.",
+      "caseInfo": "<strong>MDT Coordination:</strong> Virtual case conference convened including Margaret, Sarah (daughter), GP, OT, physiotherapist, social care coordinator, and community services representative. Shared care plan developed with clear actions: OT home assessment (within 5 days), physio assessment (within 1 week), GP medication review (3 days), meals on wheels commencement (immediate), social care needs assessment (1 week). Lead coordinator assigned (LARU paramedic). Follow-up MDT review scheduled in 2 weeks."
+    },
+    {
+      "text": "Send referrals to each service separately and let them coordinate among themselves",
+      "points": 3,
+      "impact": {
+        "trust": 2,
+        "rapport": 2,
+        "clinical": 4,
+        "support": 4,
+        "risk": 2
+      },
+      "feedback": "⚠️ This creates fragmented care with services working in silos, potential gaps, and duplication. LARU role is to actively coordinate MDT response ensuring integrated, efficient care delivery.",
+      "caseInfo": "<strong>Fragmented Referrals:</strong> Multiple referrals sent to separate services without coordination. Risk of gaps, duplication, and conflicting advice."
+    },
+    {
+      "text": "Create comprehensive written care plan and email to all services",
+      "points": 6,
+      "impact": {
+        "trust": 4,
+        "rapport": 4,
+        "clinical": 7,
+        "support": 6,
+        "risk": 4
+      },
+      "feedback": "📋 Written plan is good but one-way communication risks misunderstanding. MDT conference ensures everyone understands their role, can contribute expertise, and coordinate timing of interventions effectively.",
+      "caseInfo": "<strong>Written Care Plan:</strong> Comprehensive care plan created and distributed via email. Limited opportunity for services to contribute expertise or coordinate intervention timing."
+    },
+    {
+      "text": "Ask GP to coordinate all other services as medical lead",
+      "points": 4,
+      "impact": {
+        "trust": 3,
+        "rapport": 3,
+        "clinical": 5,
+        "support": 4,
+        "risk": 3
+      },
+      "feedback": "💡 GPs manage medical aspects but LARU specifically coordinates complex care across health and social care. This is your core function - don't defer your responsibility to lead integrated assessment and planning.",
+      "caseInfo": "<strong>GP Coordination:</strong> You deferred coordination responsibility to GP despite LARU's specific role in coordinating complex community care."
+    }
+  ]
+},
+{
+  "id": "main_q10",
+  "category": "plan",
+  "icon": "📝",
+  "text": "Time to finalise the care plan with Margaret. She says 'I just want to stay in my own home safely.' How do you proceed with shared decision-making?",
+  "options": [
+    {
+      "text": "Present comprehensive assessment findings honestly, outline realistic options with risks/benefits, explore what 'safe at home' means to her, agree plan reflecting her priorities with appropriate risk mitigation, document shared decisions clearly",
+      "points": 10,
+      "impact": {
+        "trust": 10,
+        "rapport": 9,
+        "clinical": 14,
+        "support": 6,
+        "risk": 8
+      },
+      "feedback": "🌟 Outstanding shared decision-making! You balanced professional assessment with patient autonomy, explored her values, enabled informed choice, and created truly person-centred plan. This exemplifies LARU best practice - congratulations!",
+      "caseInfo": "<strong>Shared Care Plan:</strong> Comprehensive discussion held exploring Margaret's definition of 'staying home safely.' Final care plan co-created reflecting her priorities: remaining at home with coordinated support including OT home modifications, physiotherapy for mobility/strength, meals on wheels, domestic cleaning support twice weekly, medication management support via pharmacy, regular GP monitoring, and social reengagement plan. Risk mitigation strategies agreed including falls prevention measures, emergency response system, and regular review. Margaret and family express satisfaction with plan. All decisions clearly documented with patient's informed consent."
+    },
+    {
+      "text": "Agree to her wish and arrange minimal support to respect her independence",
+      "points": 4,
+      "impact": {
+        "trust": 3,
+        "rapport": 3,
+        "clinical": 2,
+        "support": 3,
+        "risk": -5
+      },
+      "feedback": "⚠️ Respecting autonomy doesn't mean accepting unsafe situations. Must present assessment findings honestly, explain risks, but ultimately support informed decisions that balance safety and independence appropriately.",
+      "caseInfo": "<strong>Minimal Support Plan:</strong> Limited support arranged despite comprehensive needs identified. Risk mitigation inadequate."
+    },
+    {
+      "text": "Explain that staying home is too risky and recommend assisted living facility",
+      "points": 2,
+      "impact": {
+        "trust": -15,
+        "rapport": -15,
+        "clinical": 3,
+        "support": 2,
+        "risk": 2
+      },
+      "feedback": "⚠️ This overrides patient autonomy inappropriately. Many people with similar needs live safely at home with proper support. Your role is to enable her wishes through coordinated services, not impose your view of risk.",
+      "trigger": {
+        "type": "danger",
+        "title": "Patient Has Withdrawn Consent",
+        "message": "Margaret no longer wants your involvement. Pushing residential care against her explicit wishes demonstrates fundamental failure to understand patient-centred care and shared decision-making principles."
+      }
+    },
+    {
+      "text": "Create standard care package and tell her this is necessary for safety",
+      "points": 5,
+      "impact": {
+        "trust": 4,
+        "rapport": 3,
+        "clinical": 6,
+        "support": 7,
+        "risk": 5
+      },
+      "feedback": "💡 'Standard packages' don't exist - care must be individualised. Work WITH her to co-create plan reflecting her goals, lifestyle, and values while addressing identified risks through collaborative problem-solving.",
+      "caseInfo": "<strong>Standard Package Imposed:</strong> Care plan implemented without full collaborative discussion. Patient had limited input into final decisions."
+    }
+  ]
+}
+    ]  // closes the main_assessment questions array
+  }   // closes the main_assessment question set
+]     // closes the questionSets array
+,     // comma before next section
+"completionCriteria": {
+  "passingScore": 60,
+  "excellentScore": 80,
+  "metrics": {
+    "trust": {
+      "minimum": 30,
+      "target": 70
+    },
+    "rapport": {
+      "minimum": 30,
+      "target": 70
+    },
+    "clinical": {
+      "minimum": 50,
+      "target": 80
+    },
+    "support": {
+      "minimum": 50,
+      "target": 80
+    },
+    "risk": {
+      "minimum": 40,
+      "target": 75
+    }
+  }
+},
+
+"gradingRubric": {
+  "A+": {
+    "range": [90, 100],
+    "performance": "Outstanding",
+    "feedback": "Outstanding Performance! You demonstrated exceptional LARU assessment skills across all domains. Your integrated, patient-centered approach and strong MDT coordination reflect best practice in complex care management. You consistently made evidence-based decisions while respecting patient autonomy. Excellent work!"
+  },
+  "A": {
+    "range": [80, 89],
+    "performance": "Excellent",
+    "feedback": "Excellent Work! You showed strong LARU competency with comprehensive assessment skills and good MDT coordination. Your patient-centered approach was evident throughout. Consider reviewing areas where you scored lower to refine your practice further."
+  },
+  "B": {
+    "range": [70, 79],
+    "performance": "Good",
+    "feedback": "Good Performance! You demonstrated solid understanding of LARU principles with generally sound decision-making. Focus on developing more integrated assessment approaches and strengthening MDT coordination skills. Continue building on this foundation."
+  },
+  "C": {
+    "range": [60, 69],
+    "performance": "Satisfactory",
+    "feedback": "Satisfactory Progress. You show basic understanding of LARU assessment but need to develop more holistic approaches. Review best practices for integrated MDT working and patient-centered care planning. Consider additional training in complex care coordination."
+  },
+  "D": {
+    "range": [0, 59],
+    "performance": "Needs Development",
+    "feedback": "Significant Development Needed. Your responses suggest gaps in understanding integrated assessment and MDT coordination. Recommend additional training in LARU principles, complex care management, and shared decision-making before working independently with complex cases."
+  }
+},
+
+"softFailTriggers": [
+  {
+    "id": "premature_promise",
+    "title": "Professional Credibility Alert",
+    "subtitle": "Inappropriate Promise Made",
+    "description": "Making promises about care outcomes before completing comprehensive assessment",
+    "metricImpact": {
+      "trust": -15,
+      "rapport": -10
+    }
+  },
+  {
+    "id": "inadequate_history",
+    "title": "Assessment Quality Alert",
+    "subtitle": "Inadequate Medical History",
+    "description": "Superficial assessment approach missing critical clinical context",
+    "metricImpact": {
+      "trust": -10,
+      "clinical": -10,
+      "risk": -10
+    }
+  },
+  {
+    "id": "risk_assessment",
+    "title": "Risk Assessment Caution",
+    "subtitle": "Safety Considerations Need Attention",
+    "description": "Risk assessment falling below acceptable standards",
+    "threshold": {
+      "metric": "risk",
+      "value": 15
+    }
+  }
+],
+
+"hardFailTriggers": [
+  {
+    "id": "duty_of_care",
+    "title": "Critical Professional Failure",
+    "subtitle": "Breach of Duty of Care",
+    "description": "Abandoning assessment or failing to provide appropriate care"
+  },
+  {
+    "id": "privacy_violation",
+    "title": "Privacy & Consent Violation",
+    "subtitle": "Unauthorized Entry or Assessment",
+    "description": "Proceeding without proper consent or introduction"
+  },
+  {
+    "id": "autonomy_violation",
+    "title": "Patient Autonomy Violation",
+    "subtitle": "Unauthorized Changes or Actions",
+    "description": "Making changes or decisions without patient consent"
+  },
+  {
+    "id": "risk_critical",
+    "title": "Patient Has Terminated Assessment",
+    "subtitle": "Unacceptable Risk Assessment",
+    "description": "Risk assessment has fallen critically low",
+    "threshold": {
+      "metric": "risk",
+      "value": 11
+    }
+  }
+],
+
+"dynamicContent": {
+  "scenarioDetail": {
+    "presenting": {
+      "excellent": "Comprehensive Initial Assessment: 78yo female, 3rd fall in 6 months (most recent: 3 days ago). Lives alone in two-story home. Fell in bathroom, minor bruising to right hip. Self-mobilised to bed, rested overnight. Currently mobile with walking frame indoors. Family increasingly concerned about safety and ability to cope independently. Patient cooperative and willing to discuss concerns.",
+      "good": "78yo female, 3rd fall in 6 months. Lives alone, two-story home. Recent bathroom fall with minor bruising. Family concerned about safety and coping. Patient willing to discuss.",
+      "fair": "78yo female with recent falls. Lives alone. Family has concerns.",
+      "poor": "Limited information obtained - patient guarded during initial contact"
+    },
+    "medicalHistory": {
+      "excellent": "Type 2 Diabetes (diagnosed 2015, diet controlled, HbA1c 48 mmol/mol, regular podiatry review), Hypertension (diagnosed 2010, well controlled on Ramipril, home BP monitoring), Osteoarthritis (knees and hips, moderate severity, affects mobility, regular paracetamol use), Mild Cognitive Impairment (diagnosed 2022, 6-monthly memory clinic review, AMT score 8/10), Previous TIA (2 years ago, right-sided weakness resolved, on aspirin, annual stroke clinic review)",
+      "good": "Type 2 Diabetes (diet controlled), Hypertension (well controlled), Osteoarthritis (knees/hips), Mild cognitive impairment, Previous TIA (2yr ago)",
+      "fair": "Diabetes, high blood pressure, arthritis, memory issues, previous stroke.",
+      "poor": "Incomplete medical history - patient unable to recall details clearly"
+    },
+    "medications": {
+      "excellent": "Ramipril 5mg once daily (morning) - for hypertension; Aspirin 75mg once daily (morning) - for TIA prevention; Paracetamol 500mg PRN (takes 1-2 tablets most days) - for arthritis pain; Vitamin D 800IU once daily - for bone health. Compliance: Generally good but sometimes forgets afternoon doses. Webster pack provided by pharmacy weekly.",
+      "good": "Ramipril 5mg, Aspirin 75mg, Paracetamol PRN, Vitamin D 800IU. Webster pack used.",
+      "fair": "Takes several medications for heart, diabetes management. Webster pack used.",
+      "poor": "Medication list incomplete - further clarification required"
+    },
+    "allergies": {
+      "excellent": "Penicillin - Reaction: Widespread urticarial rash (documented 1995). Tolerates cephalosporins.",
+      "good": "Penicillin - Reaction: Rash",
+      "fair": "Penicillin allergy",
+      "poor": "Allergy status unclear"
+    },
+    "socialSituation": {
+      "excellent": "Home Environment: Two-storey weatherboard home. Clutter in main living areas, poor lighting in hallway and bathroom. Loose carpet edges noted in lounge room. Kitchen has limited bench space with items stored on floor. Stairs have handrail on one side only. ADL Assessment: Manages personal hygiene and dressing independently but takes longer. Struggles with housework (vacuuming, mopping) due to balance issues and fatigue. Difficulty reaching high cupboards. Uses walking frame indoors, reluctant to go outside. Patient's Ideas & Concerns: Margaret expresses strong desire to remain at home: 'This is my home of 40 years - I'm not ready to leave.' Worried about becoming a burden on her daughter. Anxious about hospital admission after previous negative experience (felt rushed, not listened to). Fears losing independence. Acknowledges struggling but wants to try supports at home first. Patient Goals: Stay at home safely, maintain as much independence as possible, avoid hospital unless absolutely necessary, not burden family. Family Support: Daughter (Sarah, 52) visits weekly, does shopping. Son (Michael, 48) lives interstate, monthly phone calls. No formal care services currently. Stopped attending local community centre 6 months ago after a fall there - now feels too anxious to return.",
+      "good": "Home Environment: Two-storey home. Some clutter, poor lighting in key areas. Stairs have single handrail. Manages personal care but struggles with housework. Uses walking frame indoors. Patient's Concerns: Wants to stay at home. Worried about being a burden on family. Anxious about hospital. Values independence. Family: Daughter visits weekly, does shopping. Son interstate.",
+      "fair": "Two-storey home with some safety concerns noted. Manages basic personal care. Wants to remain at home. Some concerns about hospital. Daughter provides support.",
+      "poor": "Home environment assessment incomplete - patient uncomfortable with environmental discussion. Limited rapport established - patient reluctant to share personal concerns."
+    },
+    "cognitive": {
+      "excellent": "Cognitive Assessment Notes: Alert and oriented to person, place, and time. Appropriate social interaction. Good attention span during conversation. Mild word-finding difficulties noted. Can recall recent events but some confusion about exact dates. Insight into memory difficulties: 'I do forget things sometimes.' Safe for independent decision-making about health with support.",
+      "good": "Cognitive Assessment: Alert and oriented. Appropriate interaction. Some memory difficulties noted. Maintains decision-making capacity.",
+      "fair": "Cognitive Status: Generally alert. Memory concerns noted.",
+      "poor": "Cognitive assessment incomplete - formal testing required"
+    }
+  }
+}
+}     // final closing brace for the entire JSON
