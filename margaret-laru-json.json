@@ -682,12 +682,9 @@
           ]
         },
         {
-          "id": "main_q2",
-          "category": "falls",
-          "icon": "🚶‍♀️",
-          "text": "During falls assessment, Margaret mentions feeling dizzy when standing. What is your priority action?",
-          "options": [
-            {
-              "text": "Assess postural blood pressure, review medication timing, check for orthostatic hypotension, and evaluate vision - integrate findings with environmental assessment",
-              "points": 10,
-              "
+          ]
+        }
+      ]
+    }
+  ]
+}
