@@ -1,0 +1,1275 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>LARU Paramedic Simulation v2.0</title>
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap');
+    
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    
+    body, html {
+      height: 100%;
+      font-family: 'Press Start 2P', cursive;
+      background: #1a1a2e;
+      background-image: repeating-linear-gradient(0deg, rgba(100,150,200,0.05) 0px, transparent 1px, transparent 2px, rgba(100,150,200,0.05) 3px),
+                        repeating-linear-gradient(90deg, rgba(150,100,200,0.05) 0px, transparent 1px, transparent 2px, rgba(150,100,200,0.05) 3px);
+      background-size: 4px 4px;
+      image-rendering: pixelated;
+    }
+
+    .app-wrapper {
+      width: 100%;
+      min-height: 100vh;
+      overflow: auto;
+      background: radial-gradient(ellipse at center, rgba(0,200,255,0.2) 0%, rgba(0,0,0,0) 70%);
+    }
+
+    .page {
+      display: none;
+      min-height: 100vh;
+      padding-bottom: 2rem;
+    }
+
+    .page.active {
+      display: block;
+    }
+
+    .title-content {
+      text-align: center;
+      padding: 4rem 2rem;
+      max-width: 800px;
+      margin: 0 auto;
+      color: #7fb3d5;
+      text-shadow: 0 0 5px rgba(127,179,213,0.5);
+    }
+
+    .qas-badge {
+      background: #16213e;
+      padding: 0.8rem 1.5rem;
+      display: inline-block;
+      margin-bottom: 2rem;
+      border: 4px solid #4a90a4;
+      box-shadow: 0 0 5px rgba(74,144,164,0.5);
+      color: #7fb3d5;
+      font-size: 0.6rem;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+    }
+
+    .title-content h1 {
+      font-size: 2rem;
+      margin: 1rem 0;
+      color: #7fb3d5;
+      letter-spacing: 3px;
+      line-height: 1.6;
+    }
+
+    .title-content p {
+      font-size: 0.7rem;
+      margin: 1.5rem 0;
+      color: #89b0ae;
+      line-height: 1.8;
+    }
+
+    .content-container {
+      max-width: 900px;
+      margin: 8rem auto 2rem;
+      background: #16213e;
+      padding: 2.5rem;
+      box-shadow: 0 0 10px rgba(74,144,164,0.3);
+      border: 4px solid #4a90a4;
+      position: relative;
+    }
+
+    .content-container h2 {
+      color: #7fb3d5;
+      font-size: 1.2rem;
+      letter-spacing: 2px;
+      margin-top: 0;
+    }
+
+    .metrics-bar {
+      position: fixed;
+      top: 0;
+      left: 0;
+      right: 0;
+      background: #16213e;
+      padding: 1.2rem 2rem;
+      box-shadow: 0 0 10px rgba(74,144,164,0.4);
+      z-index: 100;
+      transform: translateY(-100%);
+      transition: transform 0.4s ease;
+      border-bottom: 4px solid #4a90a4;
+    }
+
+    .metrics-bar.visible {
+      transform: translateY(0);
+    }
+
+    .metrics-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      gap: 1.5rem;
+      max-width: 1200px;
+      margin: 0 auto;
+    }
+
+    .metric {
+      color: #7fb3d5;
+    }
+
+    .metric-label {
+      font-size: 0.5rem;
+      margin-bottom: 0.6rem;
+      font-weight: 600;
+      letter-spacing: 1px;
+      text-transform: uppercase;
+    }
+
+    .metric-bar {
+      background: #0f1624;
+      height: 16px;
+      overflow: hidden;
+      margin-bottom: 0.6rem;
+      border: 2px solid #4a90a4;
+    }
+
+    .metric-fill {
+      height: 100%;
+      transition: width 0.5s ease;
+      box-shadow: 0 0 5px;
+    }
+
+    .metric-value {
+      font-size: 0.6rem;
+      font-weight: 700;
+      letter-spacing: 1px;
+    }
+
+    .avatar-selection {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      gap: 1.5rem;
+      margin: 2rem 0;
+    }
+
+    .avatar-card {
+      border: 4px solid #4a90a4;
+      padding: 1.5rem;
+      text-align: center;
+      cursor: pointer;
+      transition: all 0.3s ease;
+      background: #16213e;
+      position: relative;
+    }
+
+    .avatar-card:hover {
+      border-color: #7fb3d5;
+      transform: translateY(-5px);
+    }
+
+    .avatar-card.selected {
+      border-color: #89b0ae;
+      background: #1e2d4a;
+    }
+
+    .avatar-card.selected::before {
+      content: '[ SELECTED ]';
+      position: absolute;
+      top: 10px;
+      right: 10px;
+      font-size: 0.4rem;
+      color: #89b0ae;
+    }
+
+    .avatar-image {
+      width: 200px;
+      height: 200px;
+      object-fit: cover;
+      margin: 0 auto 1rem;
+      display: block;
+      border: 2px solid #4a90a4;
+      image-rendering: pixelated;
+    }
+
+    .avatar-name {
+      font-weight: 600;
+      color: #7fb3d5;
+      font-size: 0.7rem;
+      letter-spacing: 2px;
+    }
+
+    .scenario-card {
+      border: 4px solid #4a90a4;
+      padding: 2rem;
+      cursor: pointer;
+      transition: all 0.3s ease;
+      background: #16213e;
+      margin-bottom: 1.5rem;
+      position: relative;
+    }
+
+    .scenario-card:hover {
+      border-color: #7fb3d5;
+      transform: translateY(-3px);
+    }
+
+    .scenario-card.selected {
+      border-color: #89b0ae;
+      background: #1e2d4a;
+    }
+
+    .scenario-title {
+      font-size: 0.9rem;
+      font-weight: 700;
+      color: #7fb3d5;
+      margin-bottom: 1rem;
+      letter-spacing: 2px;
+      line-height: 1.6;
+    }
+
+    .scenario-detail {
+      font-size: 0.6rem;
+      color: #89b0ae;
+      line-height: 1.6;
+      margin: 0.5rem 0;
+    }
+
+    .scenario-detail strong {
+      color: #7fb3d5;
+    }
+
+    .form-group {
+      margin: 1.5rem 0;
+    }
+
+    .form-group input {
+      width: 100%;
+      max-width: 400px;
+      padding: 1rem;
+      border: 3px solid #4a90a4;
+      font-size: 0.7rem;
+      background: #0f1624;
+      color: #7fb3d5;
+      font-family: 'Press Start 2P', cursive;
+      margin: 0 auto;
+      display: block;
+    }
+
+    .form-group input:focus {
+      outline: none;
+      border-color: #89b0ae;
+      color: #89b0ae;
+    }
+
+    .btn {
+      padding: 1rem 2rem;
+      border: 4px solid #4a90a4;
+      font-size: 0.6rem;
+      font-weight: 600;
+      cursor: pointer;
+      transition: all 0.3s ease;
+      display: inline-block;
+      font-family: 'Press Start 2P', cursive;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+      background: #16213e;
+      color: #7fb3d5;
+    }
+
+    .btn:hover:not(:disabled) {
+      border-color: #7fb3d5;
+      color: #89b0ae;
+      transform: translateY(-2px);
+    }
+
+    .btn:disabled {
+      opacity: 0.3;
+      cursor: not-allowed;
+    }
+
+    .btn-primary {
+      background: #16213e;
+      color: #7fb3d5;
+    }
+
+    .btn-secondary {
+      color: #c77dff;
+      border-color: #9d4edd;
+    }
+
+    .case-card {
+      background: #16213e;
+      border: 3px solid #4a90a4;
+      padding: 1.5rem;
+      margin: 1.5rem 0;
+    }
+
+    .case-header {
+      font-weight: 700;
+      color: #7fb3d5;
+      font-size: 0.7rem;
+      margin-bottom: 1.2rem;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+      border-bottom: 2px solid #4a90a4;
+      padding-bottom: 0.5rem;
+    }
+
+    .case-detail {
+      margin: 0.8rem 0;
+      color: #89b0ae;
+      line-height: 1.8;
+      font-size: 0.6rem;
+    }
+
+    .case-detail strong {
+      color: #7fb3d5;
+    }
+
+    .question-text {
+      font-size: 0.8rem;
+      color: #7fb3d5;
+      font-weight: 600;
+      margin-bottom: 2rem;
+      line-height: 1.8;
+      padding: 1.5rem;
+      border: 3px solid #4a90a4;
+      background: #1e2d4a;
+    }
+
+    .question-icon {
+      font-size: 1.5rem;
+      margin-right: 0.8rem;
+      display: inline-block;
+      vertical-align: middle;
+    }
+
+    .options-list {
+      display: flex;
+      flex-direction: column;
+      gap: 1rem;
+    }
+
+    .option-btn {
+      background: #16213e;
+      border: 3px solid #4a90a4;
+      padding: 1.5rem;
+      text-align: left;
+      cursor: pointer;
+      transition: all 0.3s ease;
+      font-size: 0.6rem;
+      color: #89b0ae;
+      line-height: 1.8;
+      font-family: 'Press Start 2P', cursive;
+    }
+
+    .option-btn:hover {
+      border-color: #7fb3d5;
+      transform: translateX(10px);
+      color: #7fb3d5;
+    }
+
+    .option-btn.selected {
+      border-color: #c77dff;
+      background: #1e2640;
+      color: #c77dff;
+    }
+
+    .alert {
+      padding: 1.5rem;
+      margin: 1.5rem 0;
+      border: 4px solid;
+      font-family: 'Press Start 2P', cursive;
+      animation: slideIn 0.4s ease;
+    }
+
+    @keyframes slideIn {
+      from { transform: translateX(-20px); opacity: 0; }
+      to { transform: translateX(0); opacity: 1; }
+    }
+
+    .alert-warning {
+      background: #16213e;
+      border-color: #f4a261;
+      color: #f4a261;
+    }
+
+    .alert-danger {
+      background: #16213e;
+      border-color: #e76f51;
+      color: #e76f51;
+    }
+
+    .alert-info {
+      background: #16213e;
+      border-color: #89b0ae;
+      color: #89b0ae;
+    }
+
+    .alert h4 {
+      margin: 0 0 1rem 0;
+      font-weight: 700;
+      font-size: 0.7rem;
+      letter-spacing: 2px;
+    }
+
+    .alert p {
+      font-size: 0.6rem;
+      line-height: 1.8;
+      margin: 0;
+    }
+
+    .progress-indicator {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      gap: 0.8rem;
+      margin: 2rem 0;
+      padding: 1rem;
+      background: #16213e;
+      border: 2px solid #4a90a4;
+    }
+
+    .progress-dot {
+      width: 16px;
+      height: 16px;
+      background: #2a3a5a;
+      transition: all 0.3s ease;
+      border: 2px solid #3a4a6a;
+    }
+
+    .progress-dot.active {
+      background: #c77dff;
+      border-color: #c77dff;
+      transform: scale(1.3);
+    }
+
+    .progress-dot.completed {
+      background: #5dade2;
+      border-color: #5dade2;
+    }
+
+    .button-container {
+      display: flex;
+      gap: 1rem;
+      justify-content: center;
+      margin-top: 2rem;
+      flex-wrap: wrap;
+    }
+
+    .restart-button {
+      position: fixed;
+      bottom: 2rem;
+      right: 2rem;
+      width: 70px;
+      height: 70px;
+      background: #16213e;
+      color: #e76f51;
+      border: 4px solid #e76f51;
+      cursor: pointer;
+      transition: all 0.3s ease;
+      z-index: 1000;
+      display: none;
+      align-items: center;
+      justify-content: center;
+      font-size: 1.8rem;
+    }
+
+    .restart-button:hover {
+      transform: scale(1.1) rotate(180deg);
+    }
+
+    .modal-overlay {
+      position: fixed;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      background: rgba(26,26,46,0.95);
+      display: none;
+      align-items: center;
+      justify-content: center;
+      z-index: 2000;
+      backdrop-filter: blur(5px);
+    }
+
+    .modal-overlay.visible {
+      display: flex;
+    }
+
+    .modal-box {
+      background: #16213e;
+      padding: 2rem;
+      max-width: 500px;
+      text-align: center;
+      border: 4px solid #e76f51;
+      font-family: 'Press Start 2P', cursive;
+    }
+
+    .modal-box h3 {
+      color: #e76f51;
+      margin: 0 0 1.5rem 0;
+      font-size: 0.8rem;
+      line-height: 1.6;
+    }
+
+    .modal-box p {
+      color: #f4a261;
+      margin-bottom: 2rem;
+      font-size: 0.6rem;
+      line-height: 1.8;
+    }
+
+    .summary-section {
+      background: #16213e;
+      border: 3px solid #4a90a4;
+      padding: 1.5rem;
+      margin: 1.5rem 0;
+    }
+
+    .summary-title {
+      color: #7fb3d5;
+      font-weight: 700;
+      font-size: 0.8rem;
+      margin-bottom: 1.5rem;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+      border-bottom: 2px solid #4a90a4;
+      padding-bottom: 0.5rem;
+    }
+
+    .summary-item {
+      padding: 1rem;
+      border-left: 4px solid #89b0ae;
+      background: #1e2d4a;
+      margin: 1rem 0;
+      color: #89b0ae;
+      font-size: 0.6rem;
+      line-height: 1.8;
+    }
+
+    .summary-item strong {
+      color: #7fb3d5;
+    }
+
+    .loading-indicator {
+      text-align: center;
+      padding: 2rem;
+      color: #7fb3d5;
+      font-weight: 600;
+      font-size: 0.7rem;
+    }
+
+    @media (max-width: 768px) {
+      .content-container {
+        padding: 1.5rem;
+        margin: 5rem 1rem 1rem;
+      }
+      .title-content h1 {
+        font-size: 1.2rem;
+      }
+      .avatar-selection, .metrics-grid {
+        grid-template-columns: 1fr;
+      }
+      .restart-button {
+        width: 50px;
+        height: 50px;
+        font-size: 1.2rem;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="app-wrapper">
+    <!-- Restart Button -->
+    <button class="restart-button" onclick="confirmRestart()" title="Restart" id="restartBtn">🔄</button>
+
+    <!-- Restart Confirmation Modal -->
+    <div class="modal-overlay" id="restartConfirmOverlay">
+      <div class="modal-box">
+        <h3>⚠️ Restart Simulation?</h3>
+        <p>All progress will be lost.</p>
+        <div class="button-container">
+          <button class="btn btn-secondary" onclick="cancelRestart()">Cancel</button>
+          <button class="btn btn-primary" onclick="confirmRestartAction()">Restart</button>
+        </div>
+      </div>
+    </div>
+
+    <!-- Hard Fail Modal -->
+    <div class="modal-overlay" id="hardFailOverlay">
+      <div class="modal-box">
+        <h3 id="hardFailTitle">🚨 Critical Failure</h3>
+        <p id="hardFailMessage">Risk assessment has fallen to critically low levels.</p>
+        <div class="button-container">
+          <button class="btn btn-primary" onclick="restartAfterHardFail()">Restart Simulation</button>
+        </div>
+      </div>
+    </div>
+
+    <!-- Metrics Bar -->
+    <div class="metrics-bar" id="metricsBar">
+      <div class="metrics-grid" id="metricsGrid"></div>
+    </div>
+
+    <!-- Title Page -->
+    <div class="page active" id="titlePage">
+      <div class="title-content">
+        <div class="loading-indicator">Loading scenarios...</div>
+      </div>
+    </div>
+
+    <!-- Commence Shift Page -->
+    <div class="page" id="commenceShiftPage">
+      <div class="content-container">
+        <h2>Commence Shift</h2>
+        <p style="color: #89b0ae; margin-bottom: 2rem;">Select your avatar and enter your name.</p>
+        <div class="avatar-selection" id="avatarSelection"></div>
+        <div class="form-group">
+          <input type="text" id="paramedicName" placeholder="Enter your name" oninput="checkCommenceEnabled()">
+        </div>
+        <div class="button-container">
+          <button class="btn btn-primary" id="commenceBtn" onclick="commenceShift()" disabled>Start Shift</button>
+        </div>
+      </div>
+    </div>
+
+    <!-- Scenario Selection Page -->
+    <div class="page" id="scenarioSelectionPage">
+      <div class="content-container">
+        <h2>Select Your Case</h2>
+        <p style="color: #89b0ae; margin-bottom: 2rem;">Choose which LARU case to complete:</p>
+        <div id="scenarioCards"></div>
+      </div>
+    </div>
+
+    <!-- Dispatch Page -->
+    <div class="page" id="dispatchPage">
+      <div class="content-container">
+        <h2>📞 Dispatch Information</h2>
+        <div class="case-card" id="dispatchInfo"></div>
+        <div class="button-container">
+          <button class="btn btn-primary" onclick="arriveOnScene()">Acknowledge and Proceed</button>
+        </div>
+      </div>
+    </div>
+
+    <!-- Arrival Page -->
+    <div class="page" id="arrivalPage">
+      <div class="content-container">
+        <h2>🚑 Arrived on Scene</h2>
+        <div class="case-card" id="arrivalInfo"></div>
+        <div class="button-container">
+          <button class="btn btn-primary" onclick="startAssessment()">Begin Assessment</button>
+        </div>
+      </div>
+    </div>
+
+    <!-- Question Page -->
+    <div class="page" id="questionPage">
+      <div class="content-container">
+        <div class="progress-indicator" id="progressIndicator"></div>
+        <div id="alertContainer"></div>
+        <div class="question-container">
+          <div class="question-text" id="questionText"></div>
+          <div class="options-list" id="optionsList"></div>
+        </div>
+        <div class="button-container">
+          <button class="btn btn-primary" onclick="nextQuestion()" id="nextBtn" disabled>Next</button>
+        </div>
+      </div>
+    </div>
+
+    <!-- Case Summary Page -->
+    <div class="page" id="caseSummaryPage">
+      <div class="content-container">
+        <h2>📋 Case Information Obtained</h2>
+        <div id="summaryContent"></div>
+        <div class="button-container">
+          <button class="btn btn-primary" onclick="continueAssessment()">Continue Assessment</button>
+        </div>
+      </div>
+    </div>
+
+    <!-- Completion Page -->
+    <div class="page" id="completionPage">
+      <div class="content-container">
+        <h2>✅ Simulation Complete</h2>
+        <div class="alert alert-info">
+          <h4>Well done!</h4>
+          <p>You have completed the LARU simulation. Review your performance below.</p>
+        </div>
+        <div id="finalSummaryContent"></div>
+        <div class="button-container">
+          <button class="btn btn-primary" onclick="restartSimulation()">Start New Simulation</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    // Configuration
+    const SCENARIOS = [
+      { id: 'margaret', name: 'Margaret Wilson', url: 'https://raw.githubusercontent.com/THEGAMEFORLARRY/laru-assessment-data/refs/heads/main/2' }
+    ];
+
+    // Global State
+    let loadedScenarios = [];
+    let scenarioData = null;
+    let selectedAvatar = null;
+    let selectedScenarioId = null;
+
+    const gameState = {
+      paramedicName: '',
+      avatar: null,
+      scenarioId: null,
+      currentQuestionSet: 0,
+      currentQuestion: 0,
+      answers: [],
+      metrics: {},
+      caseInfo: []
+    };
+
+    // === INITIALIZATION ===
+
+    async function loadScenario(scenario) {
+      try {
+        const response = await fetch(scenario.url);
+        if (!response.ok) throw new Error(`HTTP ${response.status}`);
+        const data = await response.json();
+        return { id: scenario.id, name: scenario.name, data };
+      } catch (error) {
+        console.error(`Failed to load ${scenario.name}:`, error);
+        return null;
+      }
+    }
+
+    async function loadAllScenarios() {
+      try {
+        const results = await Promise.all(SCENARIOS.map(loadScenario));
+        loadedScenarios = results.filter(s => s !== null);
+
+        if (loadedScenarios.length === 0) {
+          throw new Error('No scenarios could be loaded');
+        }
+
+        console.log(`Loaded ${loadedScenarios.length} scenarios`);
+        showTitlePage();
+      } catch (error) {
+        console.error('Failed to load scenarios:', error);
+        showError('Failed to Load', error.message);
+      }
+    }
+
+    function showTitlePage() {
+      const titlePage = document.getElementById('titlePage');
+      titlePage.innerHTML = `
+        <div class="title-content">
+          <div class="qas-badge">Queensland Ambulance Service</div>
+          <h1>LARU Paramedic Simulation</h1>
+          <p>Local-Area Assessment and Referral Unit Training</p>
+          <button class="btn btn-primary" onclick="goToCommenceShift()">Begin Simulation</button>
+        </div>
+      `;
+    }
+
+    function showError(title, message) {
+      const titlePage = document.getElementById('titlePage');
+      titlePage.innerHTML = `
+        <div class="title-content">
+          <h1>⚠️ ${title}</h1>
+          <p>${message}</p>
+          <button class="btn btn-primary" onclick="loadAllScenarios()">Retry</button>
+        </div>
+      `;
+    }
+
+    // === AVATAR SELECTION ===
+
+    function generateAvatars() {
+      const avatarSelection = document.getElementById('avatarSelection');
+      const avatars = [
+        { id: 'p1', name: 'Paramedic 1', img: 'https://i.imgur.com/c1tFA77.png' },
+        { id: 'p2', name: 'Paramedic 2', img: 'https://i.imgur.com/LIkZl3G.png' }
+      ];
+      
+      avatarSelection.innerHTML = avatars.map(a => `
+        <div class="avatar-card" onclick="selectAvatar('${a.id}')">
+          <img src="${a.img}" alt="${a.name}" class="avatar-image">
+          <div class="avatar-name">${a.name}</div>
+        </div>
+      `).join('');
+    }
+
+    function selectAvatar(avatarId) {
+      selectedAvatar = avatarId;
+      document.querySelectorAll('.avatar-card').forEach((card, i) => {
+        card.classList.toggle('selected', ['p1', 'p2'][i] === avatarId);
+      });
+      checkCommenceEnabled();
+    }
+
+    function checkCommenceEnabled() {
+      const nameInput = document.getElementById('paramedicName');
+      const commenceBtn = document.getElementById('commenceBtn');
+      if (nameInput && commenceBtn) {
+        commenceBtn.disabled = !(nameInput.value.trim() && selectedAvatar);
+      }
+    }
+
+    // === SCENARIO SELECTION ===
+
+    function generateScenarioCards() {
+      const container = document.getElementById('scenarioCards');
+      container.innerHTML = loadedScenarios.map((s, i) => `
+        <div class="scenario-card" onclick="selectScenario('${s.id}')">
+          <div class="scenario-title">${s.data.title}</div>
+          <div class="scenario-detail"><strong>Patient:</strong> ${s.data.patient.name}, ${s.data.patient.age}yo ${s.data.patient.gender}</div>
+          <div class="scenario-detail"><strong>Location:</strong> ${s.data.dispatch.location}</div>
+          <div class="scenario-detail"><strong>Reason:</strong> ${s.data.dispatch.callReason}</div>
+        </div>
+      `).join('');
+    }
+
+    function selectScenario(scenarioId) {
+      selectedScenarioId = scenarioId;
+      const scenario = loadedScenarios.find(s => s.id === scenarioId);
+      
+      document.querySelectorAll('.scenario-card').forEach((card, i) => {
+        card.classList.toggle('selected', loadedScenarios[i].id === scenarioId);
+      });
+
+      if (scenario) {
+        scenarioData = scenario.data;
+        gameState.scenarioId = scenarioId;
+        gameState.metrics = {};
+        
+        scenarioData.performanceMetrics.forEach(m => {
+          gameState.metrics[m.id] = m.initialValue;
+        });
+        
+        generateMetricsBar();
+        populateDispatchInfo();
+        populateArrivalInfo();
+        showPage('dispatchPage');
+      }
+    }
+
+    // === METRICS ===
+
+    function generateMetricsBar() {
+      const grid = document.getElementById('metricsGrid');
+      grid.innerHTML = scenarioData.performanceMetrics.map(m => `
+        <div class="metric">
+          <div class="metric-label">${m.label}</div>
+          <div class="metric-bar">
+            <div class="metric-fill" id="${m.id}Fill" style="background: ${m.color || '#5dade2'}"></div>
+          </div>
+          <div class="metric-value" id="${m.id}Value">${m.initialValue}%</div>
+        </div>
+      `).join('');
+      
+      updateMetricsDisplay();
+    }
+
+    function updateMetricsDisplay() {
+      scenarioData.performanceMetrics.forEach(m => {
+        updateMetric(m.id, gameState.metrics[m.id]);
+      });
+    }
+
+    function updateMetric(metricId, value) {
+      const fill = document.getElementById(`${metricId}Fill`);
+      const valueText = document.getElementById(`${metricId}Value`);
+      if (fill && valueText) {
+        fill.style.width = `${Math.max(0, Math.min(100, value))}%`;
+        valueText.textContent = `${Math.round(value)}%`;
+      }
+    }
+
+    function applyMetricChanges(impact) {
+      if (!impact) return;
+      
+      Object.keys(impact).forEach(metric => {
+        if (gameState.metrics[metric] !== undefined) {
+          gameState.metrics[metric] = Math.max(0, Math.min(100, 
+            gameState.metrics[metric] + impact[metric]
+          ));
+        }
+      });
+      
+      updateMetricsDisplay();
+      checkMetricThresholds();
+    }
+
+    function checkMetricThresholds() {
+      const riskMetric = gameState.metrics['risk'];
+      
+      // Hard fail - Risk below 11%
+      if (riskMetric < 11) {
+        showHardFail('Risk Assessment Critical', 'Risk assessment has fallen below 11%. The patient is in immediate danger due to inadequate safety planning.');
+        return true;
+      }
+      
+      // Soft fail - Risk below 15%
+      if (riskMetric < 15) {
+        showSoftFailWarning();
+        return false;
+      }
+      
+      return false;
+    }
+
+    function showSoftFailWarning() {
+      const alertContainer = document.getElementById('alertContainer');
+      const warningHtml = `
+        <div class="alert alert-warning">
+          <h4>⚠️ Risk Assessment Warning</h4>
+          <p>Risk assessment is critically low (below 15%). Patient safety may be compromised. Consider your approach carefully.</p>
+        </div>
+      `;
+      
+      if (!alertContainer.innerHTML.includes('Risk Assessment Warning')) {
+        alertContainer.innerHTML += warningHtml;
+      }
+    }
+
+    function showHardFail(title, message) {
+      document.getElementById('hardFailTitle').textContent = '🚨 ' + title;
+      document.getElementById('hardFailMessage').textContent = message;
+      document.getElementById('hardFailOverlay').classList.add('visible');
+    }
+
+    function restartAfterHardFail() {
+      document.getElementById('hardFailOverlay').classList.remove('visible');
+      restartSimulation();
+    }
+
+    // === DISPATCH & ARRIVAL ===
+
+    function populateDispatchInfo() {
+      const info = document.getElementById('dispatchInfo');
+      const d = scenarioData.dispatch;
+      const p = scenarioData.patient;
+      
+      info.innerHTML = `
+        <div class="case-header">Case Details</div>
+        <div class="case-detail"><strong>Location:</strong> ${d.location}</div>
+        <div class="case-detail"><strong>Patient:</strong> ${p.name}, ${p.age}yo ${p.gender}</div>
+        <div class="case-detail"><strong>Call Reason:</strong> ${d.callReason}</div>
+        <div class="case-detail"><strong>Known History:</strong> ${d.knownHistory}</div>
+        <div class="case-detail"><strong>Time:</strong> ${d.time}</div>
+      `;
+    }
+
+    function populateArrivalInfo() {
+      const info = document.getElementById('arrivalInfo');
+      info.innerHTML = `
+        <div class="case-header">Scene Overview</div>
+        <div class="case-detail">${scenarioData.arrival.sceneDescription}</div>
+      `;
+    }
+
+    // === QUESTION FLOW ===
+
+    function loadQuestion() {
+      const questionSet = scenarioData.questionSets[gameState.currentQuestionSet];
+      const question = questionSet.questions[gameState.currentQuestion];
+      
+      showPage('questionPage');
+      
+      // Display question with icon
+      const questionText = document.getElementById('questionText');
+      questionText.innerHTML = question.icon ? 
+        `<span class="question-icon">${question.icon}</span>${question.text}` : 
+        question.text;
+      
+      // Display options
+      const optionsList = document.getElementById('optionsList');
+      optionsList.innerHTML = question.options.map((opt, i) => `
+        <button class="option-btn" onclick="selectOption(${i})">${opt.text}</button>
+      `).join('');
+      
+      updateProgressIndicator();
+      document.getElementById('nextBtn').disabled = true;
+      document.getElementById('alertContainer').innerHTML = '';
+    }
+
+    function selectOption(index) {
+      const questionSet = scenarioData.questionSets[gameState.currentQuestionSet];
+      const question = questionSet.questions[gameState.currentQuestion];
+      const option = question.options[index];
+      
+      // Highlight selected option
+      document.querySelectorAll('.option-btn').forEach((btn, i) => {
+        btn.classList.toggle('selected', i === index);
+      });
+      
+      // Store answer
+      gameState.answers.push({ 
+        questionId: question.id, 
+        optionIndex: index,
+        option: option
+      });
+      
+      // Apply metric changes
+      applyMetricChanges(option.impact);
+      
+      // Collect case info
+      if (option.caseInfo) {
+        gameState.caseInfo.push(option.caseInfo);
+      }
+      
+      // Check for triggers and warnings
+      checkTriggers(option);
+      
+      // Check for hard fail
+      const hardFailed = checkMetricThresholds();
+      if (!hardFailed) {
+        document.getElementById('nextBtn').disabled = false;
+      }
+    }
+
+    function checkTriggers(option) {
+      const alertContainer = document.getElementById('alertContainer');
+      alertContainer.innerHTML = '';
+      
+      // Option-specific trigger
+      if (option.trigger) {
+        const alertClass = option.trigger.type === 'danger' ? 'alert-danger' : 'alert-warning';
+        const icon = option.trigger.type === 'danger' ? '🚨' : '⚠️';
+        
+        alertContainer.innerHTML += `
+          <div class="alert ${alertClass}">
+            <h4>${icon} ${option.trigger.title}</h4>
+            <p>${option.trigger.message}</p>
+          </div>
+        `;
+      }
+      
+      // Check for low metrics (below 30%)
+      scenarioData.performanceMetrics.forEach(metric => {
+        if (gameState.metrics[metric.id] < 30 && metric.id !== 'risk') {
+          alertContainer.innerHTML += `
+            <div class="alert alert-warning">
+              <h4>⚠️ Low ${metric.label}</h4>
+              <p>${metric.label} is critically low. This may impact patient outcomes.</p>
+            </div>
+          `;
+        }
+      });
+      
+      // Feedback from option
+      if (option.feedback) {
+        alertContainer.innerHTML += `
+          <div class="alert alert-info">
+            <h4>Feedback</h4>
+            <p>${option.feedback}</p>
+          </div>
+        `;
+      }
+    }
+
+    function updateProgressIndicator() {
+      const questionSet = scenarioData.questionSets[gameState.currentQuestionSet];
+      const totalQuestions = questionSet.questions.length;
+      const indicator = document.getElementById('progressIndicator');
+      
+      indicator.innerHTML = Array.from({length: totalQuestions}, (_, i) => {
+        let className = 'progress-dot';
+        if (i < gameState.currentQuestion) className += ' completed';
+        if (i === gameState.currentQuestion) className += ' active';
+        return `<div class="${className}"></div>`;
+      }).join('');
+    }
+
+    function nextQuestion() {
+      const questionSet = scenarioData.questionSets[gameState.currentQuestionSet];
+      
+      if (gameState.currentQuestion < questionSet.questions.length - 1) {
+        gameState.currentQuestion++;
+        loadQuestion();
+      } else {
+        // End of current question set
+        if (gameState.currentQuestionSet === 0) {
+          // After intro questions, show case summary
+          showCaseSummary();
+        } else {
+          // After main questions, show completion
+          showCompletion();
+        }
+      }
+    }
+
+    function showCaseSummary() {
+      showPage('caseSummaryPage');
+      
+      const questionSet = scenarioData.questionSets[gameState.currentQuestionSet];
+      const summaryContent = document.getElementById('summaryContent');
+      
+      let html = '<div class="summary-section">';
+      html += `<div class="summary-title">${questionSet.summaryTitle || 'Case Summary'}</div>`;
+      
+      if (gameState.caseInfo.length > 0) {
+        gameState.caseInfo.forEach(info => {
+          html += `<div class="summary-item">${info}</div>`;
+        });
+      } else {
+        html += '<div class="summary-item">No case information recorded.</div>';
+      }
+      
+      html += '</div>';
+      
+      // Current metrics
+      html += '<div class="case-card">';
+      html += '<div class="case-header">Current Performance</div>';
+      scenarioData.performanceMetrics.forEach(m => {
+        html += `<div class="case-detail"><strong>${m.label}:</strong> ${Math.round(gameState.metrics[m.id])}%</div>`;
+      });
+      html += '</div>';
+      
+      summaryContent.innerHTML = html;
+    }
+
+    function continueAssessment() {
+      gameState.currentQuestionSet++;
+      gameState.currentQuestion = 0;
+      
+      if (gameState.currentQuestionSet < scenarioData.questionSets.length) {
+        loadQuestion();
+      } else {
+        showCompletion();
+      }
+    }
+
+    function showCompletion() {
+      showPage('completionPage');
+      
+      const finalContent = document.getElementById('finalSummaryContent');
+      
+      let html = '<div class="summary-section">';
+      html += '<div class="summary-title">Final Case Summary</div>';
+      html += `<div class="summary-item"><strong>Paramedic:</strong> ${gameState.paramedicName}</div>`;
+      html += `<div class="summary-item"><strong>Patient:</strong> ${scenarioData.patient.name}, ${scenarioData.patient.age}yo ${scenarioData.patient.gender}</div>`;
+      html += '</div>';
+      
+      // Final metrics
+      html += '<div class="case-card">';
+      html += '<div class="case-header">Final Performance Metrics</div>';
+      scenarioData.performanceMetrics.forEach(m => {
+        const score = Math.round(gameState.metrics[m.id]);
+        html += `<div class="case-detail"><strong>${m.label}:</strong> ${score}% ${getMetricFeedback(score)}</div>`;
+      });
+      html += '</div>';
+      
+      // Overall grade
+      const avgScore = scenarioData.performanceMetrics.reduce((sum, m) => 
+        sum + gameState.metrics[m.id], 0) / scenarioData.performanceMetrics.length;
+      
+      html += '<div class="alert alert-info">';
+      html += `<h4>Overall: ${Math.round(avgScore)}%</h4>`;
+      html += `<p>${getOverallFeedback(avgScore)}</p>`;
+      html += '</div>';
+      
+      finalContent.innerHTML = html;
+    }
+
+    function getMetricFeedback(value) {
+      if (value >= 80) return '(Excellent)';
+      if (value >= 60) return '(Good)';
+      if (value >= 40) return '(Adequate)';
+      return '(Needs Improvement)';
+    }
+
+    function getOverallFeedback(score) {
+      if (score >= 80) {
+        return 'Excellent work! Comprehensive LARU skills demonstrated with strong patient rapport and thorough assessment.';
+      } else if (score >= 60) {
+        return 'Good effort with solid fundamentals. Room to improve in patient trust and comprehensive assessment.';
+      } else if (score >= 40) {
+        return 'Adequate performance with areas for development. Focus on patient-centered communication and thorough assessment.';
+      } else {
+        return 'Significant learning opportunities identified. Review LARU principles around patient autonomy and comprehensive assessment.';
+      }
+    }
+
+    // === NAVIGATION ===
+
+    function goToCommenceShift() {
+      selectedAvatar = null;
+      generateAvatars();
+      showPage('commenceShiftPage');
+      document.getElementById('restartBtn').style.display = 'flex';
+    }
+
+    function commenceShift() {
+      gameState.paramedicName = document.getElementById('paramedicName').value.trim();
+      gameState.avatar = selectedAvatar;
+      generateScenarioCards();
+      showPage('scenarioSelectionPage');
+    }
+
+    function arriveOnScene() {
+      showPage('arrivalPage');
+    }
+
+    function startAssessment() {
+      document.getElementById('metricsBar').classList.add('visible');
+      gameState.currentQuestionSet = 0;
+      gameState.currentQuestion = 0;
+      gameState.caseInfo = [];
+      gameState.answers = [];
+      loadQuestion();
+    }
+
+    function showPage(pageId) {
+      document.querySelectorAll('.page').forEach(page => {
+        page.classList.remove('active');
+      });
+      document.getElementById(pageId).classList.add('active');
+    }
+
+    // === RESTART FUNCTIONS ===
+
+    function confirmRestart() {
+      document.getElementById('restartConfirmOverlay').classList.add('visible');
+    }
+
+    function cancelRestart() {
+      document.getElementById('restartConfirmOverlay').classList.remove('visible');
+    }
+
+    function confirmRestartAction() {
+      document.getElementById('restartConfirmOverlay').classList.remove('visible');
+      restartSimulation();
+    }
+
+    function restartSimulation() {
+      gameState.paramedicName = '';
+      gameState.avatar = null;
+      gameState.scenarioId = null;
+      gameState.currentQuestionSet = 0;
+      gameState.currentQuestion = 0;
+      gameState.answers = [];
+      gameState.caseInfo = [];
+      
+      scenarioData = null;
+      selectedAvatar = null;
+      selectedScenarioId = null;
+      
+      const nameInput = document.getElementById('paramedicName');
+      if (nameInput) nameInput.value = '';
+      
+      showPage('titlePage');
+      document.getElementById('metricsBar').classList.remove('visible');
+      document.getElementById('restartBtn').style.display = 'none';
+    }
+
+    // === INITIALIZE ===
+    loadAllScenarios();
+  </script>
+</body>
+</html>
