@@ -1249,10 +1249,10 @@
     }
   ]
 }
-    ]  // closes the main_assessment questions array
-  }   // closes the main_assessment question set
-]     // closes the questionSets array
-,     // comma before next section
+    ]  
+  }   
+]     
+,     
 "completionCriteria": {
   "passingScore": 60,
   "excellentScore": 80,
@@ -1413,4 +1413,4 @@
     }
   }
 }
-}     // final closing brace for the entire JSON
+}     
